@@ -26,16 +26,25 @@
           <p>{{ bio }}</p>
           <a :href="wiki">{{ artists.name }} Wikepedia Page</a>
           <br />
+          <br />
           <button>Close</button>
         </form>
       </dialog>
+      <hr />
+      <h4>Albums:</h4>
+      <div v-for="album in albums" :key="album.id">
+        <h5>
+          <a :href="album.url">{{ album.name }}</a>
+        </h5>
+      </div>
       <hr />
       <h4>Similar Artists:</h4>
 
       <div v-for="similar in similars" :key="similar.id">
         <h5>{{ similar.name }}</h5>
-        <button @click="artistInfo" v-on:click="artistSearch = similar.name">More Info</button>
+        <button @click="artistInfo" v-on:click="artistSearch = similar.name">Double Click for More Info</button>
       </div>
+      <hr />
     </div>
   </div>
 </template>
@@ -56,6 +65,7 @@ export default {
       bio: "",
       wiki: "",
       similars: [],
+      albums: [],
     };
   },
   methods: {
@@ -79,6 +89,15 @@ export default {
           console.log(this.wiki);
           this.similars = response.data.artist.similar.artist;
           console.log(this.similars);
+        });
+      axios
+        .get(
+          `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${this.artistSearch}&api_key=${apiKey}&format=json`
+        )
+        .then((response) => {
+          console.log("artist albums", response);
+          this.albums = response.data.topalbums.album;
+          console.log(this.albums);
         });
     },
     showBio: function () {
