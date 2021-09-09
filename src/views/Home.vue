@@ -1,10 +1,12 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <h3>City:</h3>
+    <h2>Search for Concerts by City and Genre!</h2>
+    <br />
+    <h3>Search by City:</h3>
     search:
     <input type="text" v-model="citySearch" placeholder="enter city.." />
-    <h3>Genre:</h3>
+    <h3>Search by Genre:</h3>
     search:
     <select v-model="genreSearch">
       <option value="">--Select Genre--</option>
@@ -33,6 +35,7 @@
     <br />
     <br />
     <button @click="indexEvents">Search</button>
+    <br />
     <br />
     <br />
     <hr />
@@ -103,7 +106,7 @@ export default {
       let apiKey = process.env.VUE_APP_TICKETMASTER_TOKEN;
       axios
         .get(
-          `https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=${this.citySearch}&genreId=${this.genreSearch}&apikey=${apiKey}`
+          `https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=${this.citySearch}&genreId=${this.genreSearch}&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=${apiKey}`
         )
         .then((response) => {
           console.log("events index", response);
