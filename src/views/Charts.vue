@@ -2,6 +2,8 @@
   <div class="charts">
     <h1>{{ message }}</h1>
     <hr />
+    <h1>Top 50 Artist Chart</h1>
+    <hr />
     <div v-for="artist in artists" :key="artist.id">
       <h2>{{ artist.name }}</h2>
       <p>
@@ -13,7 +15,7 @@
       <p>{{ artist.listeners }}</p>
       <hr />
     </div>
-    <h1>Top Tracks Chart</h1>
+    <h1>Top 50 Tracks Chart</h1>
     <hr />
     <div v-for="track in tracks" :key="track.id">
       <h2>Title: {{ track.name }}</h2>

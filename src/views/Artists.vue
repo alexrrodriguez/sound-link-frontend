@@ -7,6 +7,28 @@
     <br />
     <br />
     <button @click="artistInfo">Search!</button>
+    <br />
+    <hr />
+    <div v-if="artists.length !== 0">
+      <h2>{{ artists.name }}</h2>
+      <p>
+        <a :href="artists.url">{{ artists.url }}</a>
+      </p>
+      <h5>Tags:</h5>
+      <div v-for="tag in tags" :key="tag.id">
+        <p>{{ tag.name }}</p>
+      </div>
+      <button v-on:click="showBio">Show Biography</button>
+      <dialog id="bio-details">
+        <form method="dialog">
+          <h3>Biography:</h3>
+          <p>{{ bio }}</p>
+          <a :href="wiki">{{ artists.name }} Wikepedia Page</a>
+          <br />
+          <button>Close</button>
+        </form>
+      </dialog>
+    </div>
   </div>
 </template>
 
@@ -21,6 +43,10 @@ export default {
       message: "Search for Artist!",
       artists: [],
       artistSearch: "",
+      tags: [],
+      summary: "",
+      bio: "",
+      wiki: "",
     };
   },
   methods: {
@@ -34,7 +60,17 @@ export default {
           console.log("artist search", response);
           this.artists = response.data.artist;
           console.log(this.artists);
+          this.tags = response.data.artist.tags.tag;
+          console.log(this.tags);
+          this.summary = response.data.artist.bio.summary;
+          console.log(this.summary);
+          this.bio = response.data.artist.bio.content;
+          console.log(this.bio);
+          this.wiki = response.data.artist.bio.links.link.href;
         });
+    },
+    showBio: function () {
+      document.querySelector("#bio-details").showModal();
     },
   },
 };
