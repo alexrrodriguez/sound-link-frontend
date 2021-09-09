@@ -14,11 +14,12 @@
       <p>
         <a :href="artists.url">{{ artists.url }}</a>
       </p>
+      <p>{{ summary }}</p>
+      <button v-on:click="showBio">Show Biography</button>
       <h5>Tags:</h5>
       <div v-for="tag in tags" :key="tag.id">
         <p>{{ tag.name }}</p>
       </div>
-      <button v-on:click="showBio">Show Biography</button>
       <dialog id="bio-details">
         <form method="dialog">
           <h3>Biography:</h3>
@@ -28,6 +29,13 @@
           <button>Close</button>
         </form>
       </dialog>
+      <hr />
+      <h4>Similar Artists:</h4>
+
+      <div v-for="similar in similars" :key="similar.id">
+        <h5>{{ similar.name }}</h5>
+        <button @click="artistInfo" v-on:click="artistSearch = similar.name">More Info</button>
+      </div>
     </div>
   </div>
 </template>
@@ -47,6 +55,7 @@ export default {
       summary: "",
       bio: "",
       wiki: "",
+      similars: [],
     };
   },
   methods: {
@@ -67,6 +76,9 @@ export default {
           this.bio = response.data.artist.bio.content;
           console.log(this.bio);
           this.wiki = response.data.artist.bio.links.link.href;
+          console.log(this.wiki);
+          this.similars = response.data.artist.similar.artist;
+          console.log(this.similars);
         });
     },
     showBio: function () {
