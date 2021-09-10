@@ -57,22 +57,21 @@
       <dialog type="button" id="ticket-details">
         <form method="dialog">
           <h3>{{ currentTicket.name }}</h3>
-          <img v-bind:src="currentTicket.images[1].url" v-bind:alt="event.name" />
+          <img v-bind:src="currentImage" />
           <h4>Venue:</h4>
-          <p>{{ currentTicket._embedded.venues[0].name }}</p>
+          <p>{{ currentVenue.name }}</p>
           <h4>City:</h4>
-          <p>{{ currentTicket._embedded.venues[0].city.name }}, {{ currentTicket._embedded.venues[0].state.name }}</p>
+          <p>{{ currentCity }}, {{ currentStateCode }}</p>
+          <h4>Promoter:</h4>
+          <p>{{ currentPromoter }}</p>
           <h4>Adress:</h4>
-          <p>{{ currentTicket._embedded.venues[0].address.line1 }}</p>
+          <p>{{ currentAddress }}</p>
           <h4>Date:</h4>
-          <p>{{ currentTicket.dates.start.localDate }}</p>
+          <p>{{ currentStart }}</p>
           <h4>Time:</h4>
-          <p>{{ currentTicket.dates.start.localTime }}</p>
+          <p>{{ currentTime }}</p>
           <h4>Sub Genre</h4>
-          <p>{{ currentTicket.classifications[0].subGenre.name }}</p>
-          <h4>Sales:</h4>
-          <p>Start: {{ currentTicket.sales.public.startDateTime }}</p>
-          <p>End: {{ currentTicket.sales.public.endDateTime }}</p>
+          <p>{{ currentSubGenre }}</p>
           <h4>Tickets:</h4>
           <p>
             <a :href="currentTicket.url">{{ currentTicket.url }}</a>
@@ -96,6 +95,15 @@ export default {
       message: "Welcome to Sound Link!",
       errors: [],
       events: [],
+      currentVenue: [],
+      currentImage: [],
+      currentStart: {},
+      currentTime: {},
+      currentSubGenre: {},
+      currentCity: {},
+      currentStateCode: {},
+      currentAddress: {},
+      currentPromoter: {},
       citySearch: "",
       genreSearch: "",
       currentTicket: {},
@@ -123,7 +131,16 @@ export default {
     },
     showTicket: function (event) {
       this.currentTicket = event;
-      console.log(this.currentTicket);
+      this.currentImage = this.currentTicket.images[0].url;
+      this.currentVenue = this.currentTicket._embedded.venues[0];
+      this.currentStart = this.currentTicket.dates.start.localDate;
+      this.currentTime = this.currentTicket.dates.start.localTime;
+      this.currentSubGenre = this.currentTicket.classifications[0].subGenre.name;
+      this.currentCity = this.currentTicket._embedded.venues[0].city.name;
+      this.currentStateCode = this.currentTicket._embedded.venues[0].state.stateCode;
+      this.currentAddress = this.currentTicket._embedded.venues[0].address.line1;
+      this.currentPromoter = this.currentTicket.promoters[0].name;
+      console.log("current ticket", this.currentTicket);
       document.querySelector("#ticket-details").showModal();
     },
   },
