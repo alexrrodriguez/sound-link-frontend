@@ -54,27 +54,28 @@
       <h4>Date:</h4>
       <p>{{ event.dates.start.localDate }}</p>
       <button v-on:click="showTicket(event)">Event / Ticket Info</button>
-      <dialog id="ticket-details">
+      <dialog type="button" id="ticket-details">
         <form method="dialog">
-          <h3>{{ event.name }}</h3>
+          <h3>{{ currentTicket.name }}</h3>
+          <img v-bind:src="currentTicket.images[1].url" v-bind:alt="event.name" />
           <h4>Venue:</h4>
-          <p>{{ event._embedded.venues[0].name }}</p>
+          <p>{{ currentTicket._embedded.venues[0].name }}</p>
           <h4>City:</h4>
-          <p>{{ event._embedded.venues[0].city.name }}, {{ event._embedded.venues[0].state.name }}</p>
+          <p>{{ currentTicket._embedded.venues[0].city.name }}, {{ currentTicket._embedded.venues[0].state.name }}</p>
           <h4>Adress:</h4>
-          <p>{{ event._embedded.venues[0].address.line1 }}</p>
+          <p>{{ currentTicket._embedded.venues[0].address.line1 }}</p>
           <h4>Date:</h4>
-          <p>{{ event.dates.start.localDate }}</p>
+          <p>{{ currentTicket.dates.start.localDate }}</p>
           <h4>Time:</h4>
-          <p>{{ event.dates.start.localTime }}</p>
+          <p>{{ currentTicket.dates.start.localTime }}</p>
           <h4>Sub Genre</h4>
-          <p>{{ event.classifications[0].subGenre.name }}</p>
+          <p>{{ currentTicket.classifications[0].subGenre.name }}</p>
           <h4>Sales:</h4>
-          <p>Start: {{ event.sales.public.startDateTime }}</p>
-          <p>End: {{ event.sales.public.endDateTime }}</p>
+          <p>Start: {{ currentTicket.sales.public.startDateTime }}</p>
+          <p>End: {{ currentTicket.sales.public.endDateTime }}</p>
           <h4>Tickets:</h4>
           <p>
-            <a :href="event.url">{{ event.url }}</a>
+            <a :href="currentTicket.url">{{ currentTicket.url }}</a>
           </p>
           <button>Close</button>
         </form>
@@ -122,6 +123,7 @@ export default {
     },
     showTicket: function (event) {
       this.currentTicket = event;
+      console.log(this.currentTicket);
       document.querySelector("#ticket-details").showModal();
     },
   },

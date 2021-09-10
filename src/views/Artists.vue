@@ -42,7 +42,7 @@
 
       <div v-for="similar in similars" :key="similar.id">
         <h5>{{ similar.name }}</h5>
-        <button @click="artistInfo" v-on:click="artistSearch = similar.name">Double Click for More Info</button>
+        <button @click="artistInfo" v-on:click="artistSearch = similar.name">Click to add Artist to Search Bar</button>
       </div>
       <hr />
     </div>
@@ -89,6 +89,7 @@ export default {
           console.log(this.wiki);
           this.similars = response.data.artist.similar.artist;
           console.log(this.similars);
+          window.scrollTo(0, 0);
         });
       axios
         .get(
