@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <hr />
     <h2>Search for Concerts by City and Genre!</h2>
     <br />
     <h3>Search by City:</h3>
@@ -54,6 +55,11 @@
       <h4>Date:</h4>
       <p>{{ event.dates.start.localDate }}</p>
       <button v-on:click="showTicket(event)">Event / Ticket Info</button>
+      <h4>Tickets:</h4>
+      <button>
+        <a :href="event.url">Buy Tickets!</a>
+      </button>
+
       <dialog type="button" id="ticket-details">
         <form method="dialog">
           <h3>{{ currentTicket.name }}</h3>
@@ -62,21 +68,24 @@
           <p>{{ currentVenue.name }}</p>
           <h4>City:</h4>
           <p>{{ currentCity }}, {{ currentStateCode }}</p>
-          <h4>Promoter:</h4>
-          <p>{{ currentPromoter }}</p>
+          <!-- <h4>Promoter:</h4>
+          <p>{{ currentPromoter }}</p> -->
           <h4>Adress:</h4>
           <p>{{ currentAddress }}</p>
           <h4>Date:</h4>
           <p>{{ currentStart }}</p>
           <h4>Time:</h4>
           <p>{{ currentTime }}</p>
-          <h4>Sub Genre</h4>
-          <p>{{ currentSubGenre }}</p>
+          <!-- <h4>Sub Genre</h4>
+          <p v-if="currentSubGenre !== undefined">{{ currentSubGenre }}</p>
+          <p v-if="currentSubGenre === undefined">N/A</p>
+          <p v-else>N/A</p> -->
           <h4>Tickets:</h4>
           <p>
-            <a :href="currentTicket.url">{{ currentTicket.url }}</a>
+            <button><a :href="currentTicket.url">Buy Tickets!</a></button>
           </p>
-          <button>Close</button>
+          <hr />
+          <button>Back</button>
         </form>
       </dialog>
       <hr />
@@ -135,11 +144,11 @@ export default {
       this.currentVenue = this.currentTicket._embedded.venues[0];
       this.currentStart = this.currentTicket.dates.start.localDate;
       this.currentTime = this.currentTicket.dates.start.localTime;
-      this.currentSubGenre = this.currentTicket.classifications[0].subGenre.name;
+      // this.currentSubGenre = this.currentTicket.classifications[0].subGenre.name;
       this.currentCity = this.currentTicket._embedded.venues[0].city.name;
       this.currentStateCode = this.currentTicket._embedded.venues[0].state.stateCode;
       this.currentAddress = this.currentTicket._embedded.venues[0].address.line1;
-      this.currentPromoter = this.currentTicket.promoters[0].name;
+      // this.currentPromoter = this.currentTicket.promoters[0].name;
       console.log("current ticket", this.currentTicket);
       document.querySelector("#ticket-details").showModal();
     },

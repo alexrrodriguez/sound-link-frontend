@@ -61,6 +61,7 @@ export default {
       artists: [],
       artistSearch: "",
       tags: [],
+      images: [],
       summary: "",
       bio: "",
       wiki: "",
@@ -81,6 +82,8 @@ export default {
           console.log(this.artists);
           this.tags = response.data.artist.tags.tag;
           console.log(this.tags);
+          this.images = response.data.artist.image;
+          console.log("artists images", this.images);
           this.summary = response.data.artist.bio.summary;
           console.log(this.summary);
           this.bio = response.data.artist.bio.content;
