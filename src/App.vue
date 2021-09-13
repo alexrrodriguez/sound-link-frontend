@@ -3,9 +3,9 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
-      <router-link to="/artists">Search Artists</router-link>
-      |
       <router-link to="/charts">Top 50 Charts</router-link>
+      |
+      <router-link to="/artists">Search Artists</router-link>
       |
       <router-link to="/about">About</router-link>
       |
