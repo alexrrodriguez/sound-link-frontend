@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Charts from "../views/Charts.vue";
 import Artists from "../views/Artists.vue";
+import Profile from "../views/Profile.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
@@ -24,6 +25,11 @@ const routes = [
     path: "/charts",
     name: "Charts",
     component: Charts,
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
   },
   {
     path: "/about",
