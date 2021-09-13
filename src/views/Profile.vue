@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     indexUser: function () {
-      axios.get("/users").then((response) => {
+      axios.get("http://localhost:3000/users").then((response) => {
         console.log("user index", response);
         this.user = response.data;
       });

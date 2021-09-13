@@ -122,9 +122,10 @@ export default {
     indexEvents: function () {
       this.errors = [];
       let apiKey = process.env.VUE_APP_TICKETMASTER_TOKEN;
+
       axios
         .get(
-          `https://app.ticketmaster.com/discovery/v2/events.json?size=10&city=${this.citySearch}&genreId=${this.genreSearch}&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=${apiKey}`
+          `discovery/v2/events.json?size=10&city=${this.citySearch}&genreId=${this.genreSearch}&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=${apiKey}`
         )
         .then((response) => {
           console.log("events index", response);
