@@ -62,7 +62,7 @@
 
       <dialog type="button" id="ticket-details">
         <form method="dialog">
-          <h3>{{ currentTicket.name }}</h3>
+          <h3>">{{ currentTicket.name }}</h3>
           <img v-bind:src="currentImage" />
           <h4>Venue:</h4>
           <p>{{ currentVenue.name }}</p>
@@ -85,6 +85,7 @@
             <button><a :href="currentTicket.url">Buy Tickets!</a></button>
           </p>
           <hr />
+          <button @click="addConcert">Add Concert To Your Schedule!</button>
           <button>Back</button>
         </form>
       </dialog>
@@ -104,6 +105,7 @@ export default {
       message: "Welcome to Sound Link!",
       errors: [],
       events: [],
+      currentTicket: {},
       currentVenue: [],
       currentImage: [],
       currentStart: {},
@@ -115,7 +117,7 @@ export default {
       currentPromoter: {},
       citySearch: "",
       genreSearch: "",
-      currentTicket: {},
+      newUserConcert: {},
     };
   },
   methods: {
@@ -152,6 +154,32 @@ export default {
       // this.currentPromoter = this.currentTicket.promoters[0].name;
       console.log("current ticket", this.currentTicket);
       document.querySelector("#ticket-details").showModal();
+    },
+    addConcert: function () {
+      this.newUserConcert.name = this.currentTicket.name;
+      this.newUserConcert.venue = this.currentVenue.name;
+      this.newUserConcert.city = this.currentCity;
+      this.newUserConcert.address = this.currentAddress;
+      this.newUserConcert.date = this.currentStart;
+      this.newUserConcert.time = this.currentTime;
+      this.newUserConcert.tickets = this.currentTicket.url;
+      console.log(this.newUserConcert.name);
+      console.log(this.newUserConcert.venue);
+      console.log(this.newUserConcert.city);
+      console.log(this.newUserConcert.address);
+      console.log(this.newUserConcert.date);
+      console.log(this.newUserConcert.time);
+      console.log(this.newUserConcert.tickets);
+      axios
+        .post("http://localhost:3000/user_concerts", this.newUserConcert)
+        .then((response) => {
+          console.log("user concert created", response);
+          this.$router.push("/profile");
+        })
+        .catch((error) => {
+          console.log("user concert create errror", error.response);
+          this.errors = error.response.data.errors;
+        });
     },
   },
 };
