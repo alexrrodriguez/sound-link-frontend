@@ -5,8 +5,9 @@
       <p>{{ user.email }}</p>
       <img :src="user.image" :alt="user.name" />
     </div>
-    <div>
-      <h1>Attending:</h1>
+    <h1>{{ user.name }} Concert Schedule:</h1>
+    <div v-for="concert in concerts" :key="concert.id">
+      <h1>{{ concert.name }}</h1>
     </div>
   </div>
 </template>
@@ -20,16 +21,24 @@ export default {
   data: function () {
     return {
       user: [],
+      concerts: [],
     };
   },
   created: function () {
     this.indexUser();
+    this.indexUserConcerts();
   },
   methods: {
     indexUser: function () {
       axios.get("http://localhost:3000/users").then((response) => {
         console.log("user index", response);
         this.user = response.data;
+      });
+    },
+    indexUserConcerts: function () {
+      axios.get("http://localhost:3000/user_concerts").then((response) => {
+        console.log("user concerts index", response);
+        this.concerts = response.data;
       });
     },
   },
