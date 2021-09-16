@@ -26,6 +26,7 @@
           <p>
             <button><a :href="currentTicket.tickets">Ticket URL</a></button>
           </p>
+          <button v-on:click="destroyUserConcert(currentTicket)">Remove Concert From Schedule</button>
           <button>Back</button>
         </form>
       </dialog>
@@ -68,6 +69,12 @@ export default {
       this.currentTicket = concert;
       console.log("current ticket", this.currentTicket);
       document.querySelector("#ticket-details").showModal();
+    },
+    destroyUserConcert: function (currentTicket) {
+      axios.delete("http://localhost:3000/user_concerts/" + currentTicket.id).then((response) => {
+        console.log("user concert destroy", response);
+        window.location.reload();
+      });
     },
   },
 };
