@@ -73,6 +73,7 @@
         </ul>
       </div>
     </nav>
+
     <!-- <div id="nav">
       <router-link to="/">Home</router-link>
       |
@@ -91,6 +92,63 @@
       <router-link to="/signup" v-if="!isLoggedIn()">Signup</router-link>
     </div> -->
     <router-view />
+    <!-- General info section -->
+    <section class="general-info">
+      <div class="container">
+        <div class="row">
+          <!-- General info widget 1 -->
+          <div class="col-lg-6 general-info-block hidden-sm-down">
+            <h2>
+              Musicians
+              <br />
+              Worspress theme
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet sem id erat commodo vulputate.
+              Sed a commodo quam. Curabitur id ante vel elit pellentesque eleifend vitae vel risus. Pellentesque tempus
+              ex sit amet nisl rutrum placerat. Sed vel mattis sem. Sed vel accumsan magna. Duis enim sapien, cursus ac
+              enim sed, cursus consectetur lorem. Integer egestas vulputate turpis, rhoncus ornare orci rhoncus eget.
+              Sed lobortis sem eget accumsan imperdiet. Vivamus aliquam quis urna in laoreet. Nunc rhoncus eleifend
+              diam, porttitor interdum elit commodo dictum
+            </p>
+          </div>
+
+          <!-- General info widget 2 -->
+          <div class="col-lg-6 general-info-block">
+            <!-- Subscribe to newsletter form -->
+            <form>
+              <div class="form-group">
+                <label for="email">Subscribe to newsletter</label>
+                <div class="input-group">
+                  <input class="solid-input form" type="email" id="email" placeholder="E-mail adress" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-ok btn-okHome" type="button">OK</button>
+                  </span>
+                </div>
+              </div>
+            </form>
+
+            <!-- Social media footer -->
+            <h4>Follow us on social media</h4>
+            <ul class="social-media">
+              <li>
+                <a class="ripple" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="ripple" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="ripple" href="#"><i class="fa fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Scroll to top button -->
+      <button type="button" class="btn btn-fab btn-back" id="toTop">
+        <img src="img/arrow-up.svg" alt="Scroll to top" />
+      </button>
+    </section>
     <!-- Footer section -->
     <footer class="section-bg">
       <div class="footer-copyright">
@@ -105,6 +163,13 @@
 </template>
 
 <style>
+.header-welcome {
+  font-weight: lighter;
+}
+.header-title {
+  font-style: italic;
+  font-weight: bold;
+}
 .sound-link-header {
   margin: 6px 30px 0 20px;
   color: #28dde0;

@@ -2332,7 +2332,7 @@ body div.loaded nav.navbar.navbar-toggleable-md.navbar-light.navbar-bg .navbar-b
 5. Homepage navigation and header configuration.
 */
 .navbar {
-  box-shadow: inset 0 0 0 30px #28dde0;;
+  box-shadow: none;
   text-transform: uppercase;
   font-family: "Teko", sans-serif; }
 

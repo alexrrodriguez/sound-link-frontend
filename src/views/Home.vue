@@ -1,7 +1,178 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
-    <hr />
+    <!-- Header content -->
+    <header class="jumbotron">
+      <div class="container" id="headline-slide">
+        <div class="row headline no-gutters">
+          <div class="col-md-7 text-right align-middle welcome-title">
+            <h1 class="headline-left">
+              <span class="header-welcome">Welcome to</span>
+
+              <br />
+              <span class="header-title">Sound Link</span>
+            </h1>
+          </div>
+          <div class="col-md-5 text-left">
+            <h1 class="headline-right">Discover Your Sound</h1>
+          </div>
+          <div class="col-md-12 text-center hidden-sm-down">
+            <a class="btn btn-rounded ripple" id="discover" href="/signup">Sign up</a>
+          </div>
+          <!-- <div class="col-12 hidden-md-up">
+            <a class="btn btn-rounded ripple" id="discover">discover</a>
+          </div> -->
+        </div>
+      </div>
+      <!-- <div class="add-event-jumbotron">
+        <h4>Add event</h4>
+        <button type="button" class="btn btn-fab" id="add-event">
+          <img src="img/plusIcon.svg" alt="Add a new event" />
+        </button>
+      </div> -->
+    </header>
+    <!-- Item Filter section -->
+    <section class="section-bg filter-section events">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
+            <h2>Search For Events</h2>
+          </div>
+
+          <div class="col-lg-6 col-md-8">
+            <h2>Search by City:</h2>
+            <input type="text" v-model="citySearch" placeholder="enter city.." />
+            <br />
+            <br />
+            <h2>Search by Genre:</h2>
+            <select v-model="genreSearch">
+              <option value="">--Select Genre--</option>
+              <option value="KnvZfZ7vAvv">Alternative</option>
+              <option value="KnvZfZ7vAve">Ballads/Romantic</option>
+              <option value="KnvZfZ7vAvd">Blues</option>
+              <option value="KnvZfZ7vAvk">Children's Music</option>
+              <option value="KnvZfZ7vAeJ">Classical</option>
+              <option value="KnvZfZ7vAv6">Country</option>
+              <option value="KnvZfZ7vAvF">Dance/Electronic</option>
+              <option value="KnvZfZ7vAva">Folk</option>
+              <option value="KnvZfZ7vAv1">Hip-Hop/Rap</option>
+              <option value="KnvZfZ7vAvJ">Holiday</option>
+              <option value="KnvZfZ7vAvE">Jazz</option>
+              <option value="KnvZfZ7vAJ6">Latin</option>
+              <option value="KnvZfZ7vAvt">Metal</option>
+              <option value="KnvZfZ7vAvn">New Age</option>
+              <option value="KnvZfZ7vAvl">Other</option>
+              <option value="KnvZfZ7vAev">Pop</option>
+              <option value="KnvZfZ7vAee">R&B</option>
+              <option value="KnvZfZ7vAed">Reggae</option>
+              <option value="KnvZfZ7vAe7">Religious</option>
+              <option value="KnvZfZ7vAeA">Rock</option>
+              <option value="KnvZfZ7vAe6">Undefined</option>
+            </select>
+            <br />
+            <br />
+            <button @click="indexEvents">Search</button>
+          </div>
+        </div>
+
+        <div class="row justify-content-center no-gutters match-height">
+          <div
+            class="col-12 col-sm-12 col-md-6 col-lg-4 event-card event-rap event-anniversary event-romance"
+            v-for="event in events"
+            :key="event.id"
+          >
+            <!--Card-->
+            <div class="card hoverable">
+              <div class="view overlay img-frame">
+                <img v-bind:src="event.images[1].url" v-bind:alt="event.name" />
+                <a href="">
+                  <div class="img-mask"></div>
+                </a>
+              </div>
+              <!--Card content-->
+              <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title">{{ event.name }}</h4>
+                <!--Text-->
+                <p class="card-text">{{ event._embedded.venues[0].name }}</p>
+                <div class="filter-card-details">
+                  <ul>
+                    <li>
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                      {{ event._embedded.venues[0].city.name }}, {{ event._embedded.venues[0].state.name }}
+                    </li>
+                    <li>
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                      {{ event.dates.start.localDate }}
+                    </li>
+                    <li>
+                      <i class="fa fa-clock-o" aria-hidden="true"></i>
+                      {{ event.dates.start.localTime }}
+                    </li>
+                    <hr />
+                    <button v-on:click="showTicket(event)">Event / Ticket Info</button>
+                    <br />
+                    <br />
+                    <li>
+                      <button>
+                        <a :href="event.url">Buy Tickets!</a>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!--/.Card content-->
+            </div>
+            <!--/.Card-->
+          </div>
+          <dialog type="button" id="ticket-details">
+            <form method="dialog">
+              <h3>{{ currentTicket.name }}</h3>
+              <img v-bind:src="currentImage" />
+              <h4>Venue:</h4>
+              <p>{{ currentVenue.name }}</p>
+              <h4>City:</h4>
+              <p>{{ currentCity }}, {{ currentStateCode }}</p>
+              <h4>Adress:</h4>
+              <p>{{ currentAddress }}</p>
+              <h4>Date:</h4>
+              <p>{{ currentStart }}</p>
+              <h4>Time:</h4>
+              <p>{{ currentTime }}</p>
+              <h4>Tickets:</h4>
+              <p>
+                <button><a :href="currentTicket.url">Buy Tickets!</a></button>
+              </p>
+              <hr />
+              <button @click="addConcert">Add Concert To Your Schedule!</button>
+              <br />
+              <br />
+              <button>Back</button>
+            </form>
+          </dialog>
+        </div>
+
+        <!--/.Row-->
+
+        <!-- No Content available -->
+        <div class="row grid-no-data">
+          <div class="col-md-12 text-center">
+            <h1 class="no-content">No content available</h1>
+          </div>
+        </div>
+
+        <!-- All latest events -->
+        <div class="row">
+          <div class="col-md-12">
+            <a class="pluss-button" href="/events.html">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              <h5>All latest events</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--/.container-->
+    </section>
+    <!-- <hr />
     <h2>Search for Concerts by City and Genre!</h2>
     <br />
     <h3>Search by City:</h3>
@@ -55,11 +226,6 @@
       <h4>Date:</h4>
       <p>{{ event.dates.start.localDate }}</p>
       <button v-on:click="showTicket(event)">Event / Ticket Info</button>
-      <h4>Tickets:</h4>
-      <button>
-        <a :href="event.url">Buy Tickets!</a>
-      </button>
-
       <dialog type="button" id="ticket-details">
         <form method="dialog">
           <h3>{{ currentTicket.name }}</h3>
@@ -85,12 +251,20 @@
           <button>Back</button>
         </form>
       </dialog>
+      <h4>Tickets:</h4>
+      <button>
+        <a :href="event.url">Buy Tickets!</a>
+      </button>
+
       <hr />
-    </div>
+    </div> -->
   </div>
 </template>
 
-<style></style>
+<style>
+.events-section {
+}
+</style>
 
 <script>
 import axios from "axios";
@@ -98,7 +272,6 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Welcome to Sound Link!",
       errors: [],
       events: [],
       currentTicket: {},
