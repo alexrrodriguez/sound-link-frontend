@@ -1,0 +1,146 @@
+/*------------------------------------------------------------------
+[Table of contents]
+Musicians - Premium Music|Event HTML Template
+Author: Solid-Themes
+Version: 1.0.0
+
+Four column list SCSS file for four column list styles.
+
+1. Variables
+2. Four column list configuration.
+3. Four column list mobile configuration.
+-------------------------------------------------------------------*/
+
+/**
+1. Variables.
+*/
+$main-font: 'Teko',
+sans-serif;
+$sub-font: 'Roboto',
+sans-serif;
+$violet-color: #592ca9;
+$light-violet-color: #452877;
+$blue-color: #28dde0;
+
+/**
+2. Four column list configuration.
+*/
+fieldset, label { margin: 0; padding: 0; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+.grid-no-data {
+  display: none;
+}
+
+.rating { 
+  border: none;
+  position: absolute;
+  bottom: 35%;
+  z-index: 9999;
+  width: 100%;
+}
+
+.rating-inner {
+  position: relative;
+  text-align: center;
+}
+
+.rating-inner > input { display: none; } 
+.rating-inner > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+  color: #ffa800;
+}
+
+.rating-inner > .half:before { 
+  content: "\f089";
+}
+
+.rating-inner > label { 
+  color: #fff; 
+  font-size: .8rem; 
+}
+
+.list-four-column {
+  .br {
+    padding-top: 2rem;
+  }
+  .card {
+    img {
+      height: auto;
+      min-height: 200px;
+    }
+  }
+  .card-block {
+    padding: 1rem 1rem 1.5rem 1rem;
+  }
+  .card-title {
+    line-height: 1.5rem;
+  }
+  .card-title,
+  .rating-number {
+      font-family: $main-font;
+      text-transform: uppercase;
+      margin: 0;
+  }
+  .rating-number {
+      color: #8e8e8e;
+      font-size: 1.8em;
+  }
+
+  textarea,
+  input {
+    font-family: FontAwesome, 'Roboto', Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #d1d1d1;
+  }
+  input[type=text] {
+    background-color: #fff;
+    border: 0;
+    padding: .3rem;
+  }
+  .btn {
+    padding: .888rem;
+    font-weight: 700;
+  }
+}
+
+/**
+3. Four column list mobile configuration.
+*/
+@media screen and (max-width: 980px) {
+  .list-four-column {
+    .btn {
+        padding: .88rem;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .list-four-column {
+    .card {
+        margin: 1rem 5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .list-four-column {
+    .card {
+      margin: 1rem 0;
+
+      img {
+        height: 260px;
+      }
+    }
+
+    .card-block {
+      padding: 2rem;
+    }
+  }
+}

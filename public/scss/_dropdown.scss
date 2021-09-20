@@ -1,0 +1,103 @@
+/*------------------------------------------------------------------
+[Table of contents]
+Musicians - Premium Music|Event HTML Template
+Author: Solid-Themes
+Version: 1.0.0
+
+Dropdown SCSS file for dropdown menu styles.
+
+1. Variables
+2. Dropdown Configuration.
+-------------------------------------------------------------------*/
+
+/**
+1. Variables
+*/
+$main-font: 'Teko',
+sans-serif;
+$sub-font: 'Roboto',
+sans-serif;
+$violet-color: #592ca9;
+$light-violet-color: #452877;
+$blue-color: #28dde0;
+
+/**
+2. Dropdown configuration.
+*/
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .1rem;
+    vertical-align: middle;
+    content: "";
+    border-top: 0.2em solid;
+    border-right: 0.2em solid transparent;
+    border-left: 0.2em solid transparent;
+}
+
+.navbar .dropdown-menu {
+    border: none;
+    padding: 1rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    background-color: $blue-color;
+}
+
+.navbar.navbar-light .nav-item {
+    position: relative;
+}
+
+.navbar.navbar-light .breadcrumb .dropdown-menu a,
+.navbar.navbar-light .nav-item .dropdown-menu a {
+    padding: 1rem;
+    font-size: 1.5em;
+    line-height: 1rem;
+    z-index: -9999;
+}
+
+.dropdown-menu .dropdown-item:active,
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    background-color: $blue-color;
+    webkit-transition: all .1s linear;
+    transition: all .1s linear;
+    margin: 0 auto;
+    width: 99%;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+}
+
+.arrow-right {
+    display: inline-block;
+    margin-left: .3rem;
+    margin-bottom: .1rem;
+    vertical-align: middle;
+    content: "";
+    border-top: 0.18em solid transparent;
+    border-bottom: 0.18em solid transparent;
+    border-left: 0.18em solid #fff;
+}
+
+.dropdown-submenu {
+    padding: 1rem;
+    display: none;
+    text-align: left;
+    font-size: 1em;
+    position: absolute;
+    top: 35%;
+    left: 85.5%;
+    border-radius: 0.25rem;
+    background-color: $violet-color;
+    z-index: 9999;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    a {
+        color: #fff;
+    }
+}
+
+.dropdown-menu .dropdown-item:hover+.dropdown-submenu,
+.dropdown-submenu:hover {
+    display: block;
+}
+
+
+.navbar.navbar-light .nav-item .dropdown-menu a {
+  color:#fff;
+}

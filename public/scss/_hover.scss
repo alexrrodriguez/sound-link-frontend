@@ -1,0 +1,55 @@
+/*------------------------------------------------------------------
+[Table of contents]
+Musicians - Premium Music|Event HTML Template
+Author: Solid-Themes
+Version: 1.0.0
+
+Hover SCSS file for hover styles.
+
+1. Variables
+2. Hover configuration.
+-------------------------------------------------------------------*/
+
+/**
+1. Variables.
+*/
+$main-font: 'Teko',
+sans-serif;
+$sub-font: 'Roboto',
+sans-serif;
+$violet-color: #592ca9;
+$light-violet-color: #452877;
+$blue-color: #28dde0;
+
+/**
+2. Hover configuration.
+*/
+section.section-bg.events div.container div.row div.col-lg-6.col-md-8.hidden-sm-down ul.events-filter li.li-divider a:hover,
+section.section-bg.events div.container div.row div.col-md-12 a.pluss-button:hover,
+section.section-bg.section-news div.container div.row.button-padding div.col-md-12.btn-all a.pluss-button:hover,
+.back-btn:hover,
+div.footer-copyright h6 a:hover,
+.back-btn:hover{
+    color: $violet-color;
+    transition: color .2s ease-in;
+}
+
+section.gallery div.container-fluid div.row.gallery-left-side-margin div.col-lg-6.offset-lg-0.col-md-12.offset-md-0.col-sm-10.offset-sm-1.col-10.offset-1 div.col-md-12 a.pluss-button2:hover,
+div.ind-event ul.event-social.hidden-sm-down li a i:hover,
+div.card-block.px-3 div.fb a i:hover,
+div.card div.row.no-gutters div.col-md-8.px-3  a.pluss-button:hover {
+    color: $blue-color;
+    transition: color .2s ease-in;
+}
+
+.news .btn-all-RM:hover {
+    color: #fff;
+    transition: color .3s ease-in;
+}
+
+section.general-info {
+  button:hover {
+    transition: color .2s ease-in;
+    background-color: $violet-color;
+  }
+}

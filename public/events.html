@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Setup HEAD -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <meta name="author" content="">
+  <title>All Events -- Musicians Premium HTML Template</title>
+
+  <!-- Import CSS -->
+  <link href="css/vendors/normalize.css" rel="stylesheet">
+  <link href="css/vendors/bootstrap.css" rel="stylesheet">
+  <link href="css/vendors/animate.css" rel="stylesheet">
+  <link href="css/vendors/ripple.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Add Event Modal -->
+  <div class="modal-background"></div>
+
+  <!-- The Modal -->
+  <div id="add-event-modal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="close text-center"><img src="img/plusIcon.svg" alt="Close Modal"></div>
+      <div class="row no-gutters">
+        <div class="col-lg-4">
+          <div class="modal-img">
+            <h1>add event</h1>
+            <div class="row social-links">
+              <div class="col-lg-12">
+                <div class="solid-form transparent">
+                  <label for="facebook">Facebook</label>
+                  <input type="text" id="facebook">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="solid-form transparent">
+                  <label for="twitter">twitter</label>
+                  <input type="text" id="twitter">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="solid-form transparent">
+                  <label for="instagram">instagram</label>
+                  <input type="text" id="instagram">
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="solid-form transparent no-padding">
+                  <h2 class="main-img">Main image</h2>
+                  <a href="#" class="btn btn-upload btn-upload-main ripple">upload</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="form">
+            <div class="solid-form">
+              <label for="event-name">Event name</label>
+              <input type="text" id="event-name">
+            </div>
+            <div class="solid-form">
+              <label for="event-description">event description</label>
+              <input type="text" id="event-description">
+            </div>
+            <div class="row no-gutters event-info">
+              <div class="col-lg-4">
+                <div class="solid-form">
+                  <label for="date">date</label>
+                  <input type="text" id="date">
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="solid-form">
+                  <label for="time">time</label>
+                  <input type="text" id="time">
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="solid-form">
+                  <label for="place">Place</label>
+                  <input type="text" id="place">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-5">
+                <div class="solid-form">
+                  <label for="artist1">Artist 1</label>
+                  <input type="text" id="artist1">
+                  <a href="#" class="btn btn-upload ripple">upload</a>
+                  <div class="add-artist"><i class="fa fa-plus" aria-hidden="true"></i></div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="solid-form">
+                  <label for="artist2">Artist 2</label>
+                  <input type="text" id="artist2">
+                  <a href="#" class="btn btn-upload ripple">upload</a>
+                  <div class="add-artist"><i class="fa fa-plus" aria-hidden="true"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn modal-btn ripple">ADD</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="page-nav">
+    <!-- Navigation -->
+    <nav class="navbar navbar-toggleable-md navbar-light navbar-bg">
+      <!-- Mobile nav toggler -->
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mob-nav" aria-controls="mob-nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Musicians LOGO -->
+      <a class="navbar-brand logo ripple" href="index.html">
+        <img src="img/logo.svg" alt="Musicians -- Premium HTML template" />
+      </a>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="mob-nav">
+        <!-- Main Menu -->
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="index.html">Home </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="index.html">Homepage Style 1</a>
+              <a class="dropdown-item ripple" href="index.html">Homepage Style 2</a>
+            </div>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link active dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="events.html">Events <span class="sr-only">(current)</span> </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="events.html">Events</a>
+              <a class="dropdown-item ripple" href="single-event.html">Single Event</a>
+            </div>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="gallery.html">Gallery </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="gallery.html">Gallery</a>
+              <a class="dropdown-item ripple hidden-lg-up" href="single-gallery.html">Single Gallery 1</a>
+              <a class="dropdown-item ripple hidden-lg-up" href="single-gallery-2.html">Single Gallery 2</a>
+              <a class="dropdown-item ripple hidden-md-down" href="#">Single Gallery <span class="arrow-right"></span></a>
+              <div class="dropdown-submenu fadeInDown animated hidden-md-down">
+                <a class="dropdown-item ripple" href="single-gallery.html">Single Gallery 1</a>
+                <a class="dropdown-item ripple" href="single-gallery-2.html">Single Gallery 2</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="blog.html">Blog </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="blog.html">Blog</a>
+              <a class="dropdown-item ripple" href="single-post.html">Single Post</a>
+              <a class="dropdown-item ripple" href="single-post.html">Single Page</a>
+            </div>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="guestbook.html">Guestbook </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="guestbook.html">Guestbook</a>
+              <a class="dropdown-item ripple" href="single-guestbook.html">Single Guestbook</a>
+            </div>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link ripple" href="contacts.html">Contacts</a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="404.html">Error </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="404.html">404</a>
+              <a class="dropdown-item ripple" href="400.html">400</a>
+              <a class="dropdown-item ripple" href="403.html">403</a>
+              <a class="dropdown-item ripple" href="500.html">500</a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Social menu -->
+        <ul class="navbar-nav social-nav">
+          <li class="nav-item">
+            <a class="nav-link ripple" href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ripple" href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ripple" href="#">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Event five column section starts -->
+  <section class="section-bg list-five-column">
+
+    <div class="container-fluid">
+
+      <!-- Content title row starts -->
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
+          <h2 class="text-center">Latest Events</h2>
+        </div>
+      </div>
+
+      <!-- Content search section stats -->
+      <div class="row justify-content-center">
+        <div class="col-10 col-sm-8 col-md-8 col-xl-8">
+          <div class="input-group">
+            <input class="solid-input form" type="text" id="search" placeholder="&#xf002; Find your event">
+            <span class="input-group-btn">
+              <button class="btn btn-ok" type="button"> OK</button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content row starts -->
+      <div class="row br justify-content-center no-gutters">
+
+        <!-- Large card -->
+        <div class="col-xl-5 col-md-5 col-large-card hidden-md-down">
+          <div class="card hoverable large-card">
+            <div class="view overlay img-frame">
+              <img src="img/matheus-ferrero-183749-min.jpg" alt="Rock'N'Roll Band At Arena Riga, 2017">
+              <a href="single-event.html">
+                <div class="img-mask"></div>
+              </a>
+            </div>
+            <!--Card content-->
+            <div class="card-block">
+              <!--Title-->
+              <h4 class="card-title">Rock'N'Roll Band At Arena Riga, 2017</h4>
+              <!--Text-->
+              <p class="card-text">Rock'N'Roll Band will play at Arena Riga, this year. Do not miss the event and be the first who sees it! If you are up for it, come and see it.</p>
+              <div class="filter-card-details">
+                <ul>
+                  <li><i class="fa fa-map-marker" aria-hidden="true"></i>Riga</li>
+                  <li><i class="fa fa-calendar" aria-hidden="true"></i>22/06/2017</li>
+                  <li><i class="fa fa-clock-o" aria-hidden="true"></i>22:00</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--/.Card large-->
+        </div>
+        <!--/.col large-->
+
+
+        <div class="col-lg-7 col-md-12 col-sm-10">
+          <div class="row no-gutters justify-content-center match-height">
+
+            <!-- Small Card -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/ihor-malytskyi-222295-min.jpg" alt="Blues Band in New York, 2017">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">Blues Band in New York, 2017</h4>
+                  <!--Text-->
+                  <p class="card-text">Awesome Blues Band playing in New York. This is once in lifetime chance to see it.</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>New York</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>13/07/2017</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>17:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Small Card -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/guillaume-bolduc-246404-min.jpg" alt="Anniversary gig of Jazz Duet, 2018">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">Anniversary gig of Jazz Duet, 2018</h4>
+                  <!--Text-->
+                  <p class="card-text">Jazz Duet will have their anniversary next year. Don't miss the chance and be there.</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>London</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>03/01/2018</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>21:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Small Card -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/derek-truninger-41776-min.jpg" alt="Entertainment Event, 2017">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">Entertainment Event, 2017</h4>
+                  <!--Text-->
+                  <p class="card-text">One of the most favorite entertainment event. Are you up for it? Subscribe to this event to find out latest news first. This is totally cool!</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>Riga Stadium</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>22/08/2017</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>22:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Small card -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/marvin-meyer-190672-min.jpg" alt="Rock'N'Roll Hills Festival, 2018">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">Rock'N'Roll Hills Festival, 2018</h4>
+                  <!--Text-->
+                  <p class="card-text">We are announcing Rock'N'Roll Festival, which will take place in Sunstride Stadium on 2018...</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>Sunstride</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>24/06/2018</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>16:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Small Card -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/john-raptis-225341-min.jpg" alt="Jukebox festival Live, 2017">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">Jukebox festival Live, 2017</h4>
+                  <!--Text-->
+                  <p class="card-text">Have you ever thought about playing songs on Jukebox for whole night? Now it's possible, find out more in this post..</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>Rigas Stadium</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>03/07/2017</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>24:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Small Card -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/austin-neill-222827-min.jpg" alt="Rock'N'Roll Band At Skonto, 2017">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">Rock'N'Roll Band At Skonto, 2017</h4>
+                  <!--Text-->
+                  <p class="card-text">Rock'N'Roll Band will play at the Skonto Stadium this year. Don't miss the chance to see them.</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>Skonto</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>18/06/2017</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>22:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--/.row small 2-->
+        </div>
+        <!--/.col small-->
+      </div>
+      <!--/.row-->
+
+
+      <div class="row justify-content-center no-gutters match-height">
+        
+        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-10">
+          <div class="row no-gutters justify-content-center">
+            <!-- Small Card -->
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/richie-lugo-185957-min.jpg" alt="Anniversary event of Rock'N'Roll, 2018">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">Anniversary event of Rock'N'Roll, 2018</h4>
+                  <!--Text-->
+                  <p class="card-text">Nexy year will be a big year for Rock'N'Roll. A big Anniversary is coming...</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>Hamburg</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>22/06/2018</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>13:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Small Card -->
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/matheus-ferrero-179023-min.jpg" alt="The Rickies at Skonto, 2017">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">The Rickies at Skonto Stadium Live, 2017</h4>
+                  <!--Text-->
+                  <p class="card-text">The Rickies will play at the skonto on 2017. Do not miss the chance to see them.</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>Skonto</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>13/09/2017</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>20:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/.Card large-->
+        </div>
+        <!--/.col large-->
+
+        <!-- Small Card -->
+        <div class="col-lg-7 col-md-12 col-sm-10">
+          <div class="row no-gutters justify-content-center">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/atikh-bana-125761.jpg" alt="The Band At Riga, 2018">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">The Band At Riga Stadium, 2018</h4>
+                  <!--Text-->
+                  <p class="card-text">There is a huge band going to play in Riga on 2018. Subscribe and find out.</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>Riga</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>22/06/2018</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>22:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Small Card -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/angello-lopez-138917-min.jpg" alt="The Shoreville in Las Vegas, 2018">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">The Shoreville in Las Vegas, 2018</h4>
+                  <!--Text-->
+                  <p class="card-text">The Shoreville will play in Las Vegas next year. Wanna find more? Subscribe!</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>LV</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>29/04/2018</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>22:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Small Card -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="card hoverable small-card">
+                <div class="view overlay img-frame">
+                  <img src="img/alex-wong-31476-min.jpg" alt="The Goo Doo on the sea, 2017">
+                  <a href="single-event.html">
+                    <div class="img-mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">The Goo Doo on the sea, 2017</h4>
+                  <!--Text-->
+                  <p class="card-text">The Goo Doo will play on the sea platform this year. See more now and don't miss the chance to be the first that finds out...</p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li><i class="fa fa-map-marker" aria-hidden="true"></i>Riga</li>
+                      <li><i class="fa fa-calendar" aria-hidden="true"></i>22/07/2017</li>
+                      <li><i class="fa fa-clock-o" aria-hidden="true"></i>15:00</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/.row small 1-->
+        </div>
+        <!--/.col small-->
+      </div>
+      <!--/.row-->
+
+      <!-- No Content grid -->
+      <div class="row grid-no-data">
+        <div class="col-md-12 text-center">
+          <h1 class="no-content">No content available</h1>
+        </div>
+      </div>     
+    </div>
+    <!--/.end of container-->
+  </section>
+
+  <!-- Add Event Section -->
+  <section class="add">
+    <div class="add-section-btn">
+      <button type="button" id="add-event" class="btn-fab ripple"><img src="img/plusIcon.svg" alt="Add Event"></button>
+    </div>
+    <h1 class="text-center">Add Event</h1>
+  </section>
+
+
+  <!-- General info section -->
+  <section class="general-info">
+    <div class="container">
+      <div class="row">
+        <!-- General info widget 1 -->
+        <div class="col-lg-6 general-info-block hidden-sm-down">
+          <h2>Musicians<br> Worspress theme</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet sem id erat commodo vulputate. Sed a
+            commodo quam. Curabitur id ante vel elit pellentesque eleifend vitae vel risus. Pellentesque tempus ex sit amet
+            nisl rutrum placerat. Sed vel mattis sem. Sed vel accumsan magna. Duis enim sapien, cursus ac enim sed, cursus
+            consectetur lorem. Integer egestas vulputate turpis, rhoncus ornare orci rhoncus eget. Sed lobortis sem eget
+            accumsan imperdiet. Vivamus aliquam quis urna in laoreet. Nunc rhoncus eleifend diam, porttitor interdum elit
+            commodo dictum</p>
+        </div>
+
+        <!-- General info widget 2 -->
+        <div class="col-lg-6 general-info-block">
+          <!-- Subscribe to newsletter form -->
+          <form>
+            <div class="form-group">
+              <label for="email">Subscribe to newsletter</label>
+              <div class="input-group">
+                <input class="solid-input form" type="email" id="email" placeholder="E-mail adress">
+                <span class="input-group-btn">
+                  <button class="btn btn-ok btn-okHome" type="button">OK</button>
+                </span>
+              </div>
+            </div>
+          </form>
+
+          <!-- Social media footer -->
+          <h4>Follow us on social media</h4>
+          <ul class="social-media">
+            <li>
+              <a class="ripple" href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a class="ripple" href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a class="ripple" href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll to top button -->
+    <button type="button" class="btn btn-fab btn-back" id="toTop"><img src="img/arrow-up.svg" alt="Scroll to top"></button>
+  </section>
+
+  <!-- Footer section -->
+  <footer class="section-bg">
+    <div class="footer-copyright">
+      <h6>All rights reserved <a href="http://solid-themes.com" target="_blank"> solid-themes</a> © 2017</h6>
+    </div>
+  </footer>
+
+  <!-- Load Scripts -->
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/tether.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.matchHeight-min.js"></script>
+  <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

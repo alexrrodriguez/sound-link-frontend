@@ -1,0 +1,67 @@
+/*------------------------------------------------------------------
+[Table of contents]
+Musicians - Premium Music|Event HTML Template
+Author: Solid-Themes
+Version: 1.0.0
+
+Error SCSS file for error page styles.
+
+1. Variables
+2. Error Page configuration.
+-------------------------------------------------------------------*/
+
+/**
+1. Variables.
+*/
+$main-font: 'Teko',
+sans-serif;
+$sub-font: 'Roboto',
+sans-serif;
+$violet-color: #592ca9;
+$light-violet-color: #452877;
+$blue-color: #28dde0;
+
+/**
+2. Error Page configuration.
+*/
+.navbar {
+    padding: 2.5rem 3rem;
+}
+
+.page-nav {
+    background-color: $violet-color;
+}
+
+.page-error {
+    h1 {
+        color: #fff;
+        font-size: 20em;
+        margin-bottom: 0px;
+        text-transform: uppercase;
+    }
+    .container-fluid {
+        max-width: 1350px;
+    }
+    .btn {
+        text-transform: uppercase;
+    }
+    .section-bg {
+        height: auto;
+
+        h2 {
+            color: #fff;
+            font-size: 4rem;
+            margin-top: -40px;
+            text-transform: uppercase;
+        }
+    }
+    .btn-rounded {
+    background-color: $violet-color;
+    border-radius: 50px;
+    font-family: "Teko",sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    padding: 8px 30px 7px;
+    letter-spacing: 0.5px;
+    }
+}

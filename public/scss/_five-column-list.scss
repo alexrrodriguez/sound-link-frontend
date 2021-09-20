@@ -1,0 +1,181 @@
+/*------------------------------------------------------------------
+[Table of contents]
+Musicians - Premium Music|Event HTML Template
+Author: Solid-Themes
+Version: 1.0.0
+
+Five column list SCSS file for five column list styles.
+
+1. Variables
+2. Five column list configuration.
+3. Five column list mobile configuration.
+-------------------------------------------------------------------*/
+
+/**
+1. Variables.
+*/
+$main-font: 'Teko',
+sans-serif;
+$sub-font: 'Roboto',
+sans-serif;
+$violet-color: #592ca9;
+$light-violet-color: #452877;
+$blue-color: #28dde0;
+
+/**
+2. Five column list configuration.
+*/
+.grid-no-data {
+  display: none;
+}
+
+.list-five-column {
+  .br {
+    margin: 3rem 0 0 0;
+  }
+  .section-bg {
+    height: auto;
+  }
+  .container-fluid {
+    max-width: 1350px;
+  }
+  .general-info-dargkviolet {
+    background-color: #36215b;
+  }
+  textarea,
+  input {
+    font-family: FontAwesome, 'Roboto', Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #d1d1d1;
+  }
+  input[type=text] {
+    background-color: #fff;
+    border: 0;
+    padding: .3rem;
+  }
+  .btn {
+    padding: .888rem;
+    font-weight: 700;
+  }
+
+  .large-card {
+    min-height: 600px;
+    img {
+      min-height: 380px;
+    }
+    .card-title {
+      font-size: 2.5em;
+    }
+    .card-block {
+      padding: 2rem 1.5rem;
+      p {
+        font-size: 1.2em;
+      }
+    }
+    ul {
+      margin-bottom: 0;
+      li {
+        font-size: 1em;
+      }
+    }
+  }
+  .small-card {
+    max-height: 284px;
+    font-size: .6em;
+    .view {
+      overflow: hidden;
+    }
+    .card-block {
+      padding: .8rem .6rem;
+      p {
+        font-size: 1.1em;
+      }
+    }
+    ul {
+      margin-bottom: 0;
+      li {
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+
+.add {
+  background-color: $violet-color;
+  position: relative;
+  h1 {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 4em;
+  }
+
+  .add-section-btn {
+    position: absolute;
+    top: -35px;
+    right: 50%;
+    margin-right: -25px;
+  }
+}
+
+.general-info {
+  background-color: $light-violet-color;
+}
+
+/**
+3. Five column list mobile configuration.
+*/
+@media screen and (max-width: 1220px) {
+  .list-five-column  {
+    .card {
+      margin: .5rem;
+    }
+    .small-cards {
+      font-size: .5em;
+    }
+    .large-card {
+      min-height: 583px;
+      max-height: 583px;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .list-five-column  {
+    .btn {
+        padding: .88rem;
+    }
+    .card-title {
+        font-size: 3.1em
+    }
+    .small-card .card-block p {
+        font-size: 1.5em;
+    }
+    .small-card ul li {
+        font-size: 1.2em;
+    }
+    .card {
+        max-height: 500px;
+    }
+    .card img {
+        height: 280px;
+    }
+    .small-card .card-block {
+        padding: 1.25rem;
+    }
+  }
+}
+
+@media screen and (max-width: 853px) {
+  .add-section-btn  {
+    right: 45%;
+  }
+}
+
+
+@media screen and (max-width: 440px) {
+  .add-section-btn  {
+      right: 40%;
+  }
+}

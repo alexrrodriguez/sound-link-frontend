@@ -1,0 +1,107 @@
+/*------------------------------------------------------------------
+[Table of contents]
+Musicians - Premium Music|Event HTML Template
+Author: Solid-Themes
+Version: 1.0.0
+
+One column list SCSS file for One column list styles.
+
+1. Variables
+2. One column list configuration.
+-------------------------------------------------------------------*/
+
+/**
+1. Variables.
+*/
+$main-font: 'Teko',
+sans-serif;
+$sub-font: 'Roboto',
+sans-serif;
+$violet-color: #592ca9;
+$light-violet-color: #452877;
+$blue-color: #28dde0;
+
+/**
+2. One column list configuration.
+*/
+.grid-no-data {
+    display: none;
+}
+
+.list-one-column {
+  .br {
+    padding-top: 2rem;
+  }
+  .card {
+    background-color: $violet-color;
+    img {
+      height: 100%;
+      min-height: 350px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .card-block {
+    position: relative;
+    padding-top: 4rem;
+  }
+  .card-title {
+    color: #fff;
+    font-family: $sub-font;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    font-size: 2em;
+  }
+  .blog-details {
+    display: inline-flex;
+    padding: 0;
+    color: #fff;
+    font-size: .8em;
+    font-weight: 500;
+    margin-bottom: .3rem;
+    li {
+      display: block;
+      padding-right: 1rem;
+
+      i {
+        padding-right: .2rem;
+      }
+    }
+  }
+  .card-text {
+    color: #fff;
+    margin-top: 1.3rem;
+    padding-bottom: 5rem;
+  }
+  .fb {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    a {
+      color: #fff;
+      font-size: 1.3em;
+    }
+  }
+  .pluss-button {
+    position: absolute;
+    bottom: 0%;
+    right: 5%;
+  }
+  textarea,
+  input {
+    font-family: FontAwesome, 'Roboto', Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #d1d1d1;
+  }
+  input[type=text] {
+    background-color: #fff;
+    border: 0;
+    padding: .3rem;
+  }
+  .btn {
+    padding: .888rem;
+    font-weight: 700;
+  }
+}

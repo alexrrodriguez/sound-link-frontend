@@ -1,0 +1,346 @@
+/*------------------------------------------------------------------
+[Table of contents]
+Musicians - Premium Music|Event HTML Template
+Author: Solid-Themes
+Version: 1.0.0
+
+Modal SCSS file for modal styles.
+
+1. Modal configuration.
+2. Modal mobile configuration.
+-------------------------------------------------------------------*/
+
+/**
+1. Modal Configuration.
+*/
+.modal {
+    padding: 4rem;
+    z-index: 10000;
+    top: 15%;
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
+
+.modal::-webkit-scrollbar { width: 0 }
+
+.modal-content {
+    .btn {
+        text-transform: uppercase;
+    }
+    .add-artist {
+        top: 56%;
+    }
+    .solid-form.transparent {
+        background-color: transparent;
+        
+        label {
+            color: #fff;
+            font-size: 1em;
+        }
+        input[type=text] {
+            color: #fff;
+            border-color: #fff;
+        }
+    }
+    .solid-form {
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+        padding-top: 2rem;
+        position: relative;
+        label {
+            text-transform: uppercase;
+            color: #474747;
+            font-weight: 500;
+            position: absolute;
+            font-size: 1.4em;
+            font-weight: 500;
+            width: 100%;
+            left: 0;
+            line-height: 3rem;
+            transition: all .2s ease-in-out;
+        }
+        .form-control {
+            margin: 0;
+        }
+
+        label.active {
+            line-height: .3rem;
+        }
+        input {
+            background-color: transparent;
+            border-radius: 0;
+            border: 0;
+            height: 3.1rem;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #ccc;
+        }
+        input[type=text] {
+            color: #262626;
+            padding-left: 0;
+        }
+        input[type=text]:focus {
+            border-bottom: 1px solid #ccc;
+        }        
+    }
+    margin: auto;
+    width: 60%;
+    border: 0;
+    border-radius: 0;
+    i {
+        color: #592ca9;
+    }
+    .modal-img {
+        background-image: url('img/jumbotron-img-min.jpg');
+        width: 100%;
+        height: 100%;
+        min-height: 150px;
+        background-size: cover;
+        background-position: center;
+        padding: 1rem;
+    }
+    .modal-img h1 {
+        margin: 0;
+        color: #fff;
+        font-size: 4em;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        line-height: 3rem;
+        word-spacing: 1000px;
+        margin-top: 2rem;
+    }
+    .form-control {
+        margin: 0;
+    }
+    .form-pad {
+        padding: 2rem;
+        padding-left: 2rem;
+        z-index: 1;
+    }
+    .form {
+        padding: 1rem 2rem;
+    }
+    .modal-btn {
+        position: absolute;
+        bottom: -8%;
+        right: -4%;
+        background-color: #28dde0;
+        border-radius: 0;
+        font-family: "Teko", sans-serif;
+        font-weight: 400;
+        font-size: 1.9em;
+        padding: 1rem 2rem;
+        letter-spacing: 0.5px;
+        color: #fff;
+    }
+    input[type=text] {
+        color: $blue-color;
+    }
+    .btn-upload {
+        background-color: #592ca9;
+        color: #fff;
+        border-radius: 50px;
+        padding: .5rem 1.3rem;
+        font-weight: 400;
+        margin-top: .8rem;
+    }
+    .add-artist {
+        position: absolute;
+        top: 43%;
+        right: -1%;
+        background-color: #28dde0;
+        color: #fff;
+        border-radius: 50%;
+        font-size: .5em;
+        width: 1.1rem;
+        height: 1rem;
+    }
+    .add-artist i {
+        padding: .3rem 0 .4rem .37rem;
+        color: #fff;
+    }
+    .add-artist:hover {
+        background-color: $violet-color;
+        transition: all .2s ease-in;
+    }
+    .social-links .md-form {
+        background-color: transparent;
+        z-index: 9999;
+    }
+    .social-links .md-form label {
+        color: #fff;
+        font-size: 1em;
+    }
+    .main-img {
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 1.3em;
+    }
+    .btn-upload-main {
+        background-color: #28dde0;
+    }
+    .close {
+        position: absolute;
+        top: -5%;
+        right: -3%;
+        background-color: #fff;
+        width: 50px;
+        padding: 12px;
+        height: 50px;
+        border-radius: 50%;
+        opacity: 1;
+        z-index: 2;
+
+        img {
+          transform: rotate(45deg);
+        }
+    }
+
+
+    .close:hover {
+        img {
+            transform-origin: center;
+            transform: rotate(135deg);
+            transform-origin: 50% 50%;
+            transition: all .2s ease-in;
+        }
+    }
+}
+
+.modal-content,
+.close {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+
+body,
+html {
+    height: 100%;
+}
+
+.modal-background {
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    display: none;
+    top: 0;
+    bottom: 0;
+    opacity: 0.5;
+}
+
+div.modal-content {
+    div.row.no-gutters {
+        div.col-lg-8 {
+            div.form {
+                div.md-form {
+                    input[type=text],
+                    input[type=email] {
+                        padding-left: 0;
+                        color: #262626;
+                    }
+                    input[type=text]:focus {
+                        border-bottom: 1px solid #ccc;
+                    }
+                    label {
+                        top: auto;
+                    }
+                    label.active {
+                        line-height: .5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+div.modal-content {
+    div.row.no-gutters {
+        div.col-lg-4 {
+            div.modal-img {
+                div.row.social-links {
+                    div.col-lg-12 {
+                        div.md-form {
+                            input[type=text],
+                            input[type=email] {
+                                padding-left: 0;
+                                color: #fff;
+                            }
+                            input[type=text]:focus {
+                                border-bottom: 1px solid #ccc;
+                            }
+                            label {
+                                top: auto;
+                            }
+                            label.active {
+                                line-height: .5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.form {
+    margin-top: 2rem;
+}
+
+.modal-content .form {
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.modal-content .btn-upload-main:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all .2s ease-in;
+}
+
+a.btn-upload:hover {
+    background-color: $blue-color;
+    color: $violet-color;
+    transition: all .2s ease-in;
+}
+
+.modal-content .modal-btn:hover {
+    background-color: $violet-color;
+    color: $blue-color;
+    transition: all .2s ease-in;
+}
+
+/**
+2. Modal mobile configuration.
+*/
+@media screen and (max-width: 991px) {
+    .close {
+        top: -2%;
+        right: -6%;
+    }
+    .modal-btn {
+        bottom: -4%;
+        right: -4%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .modal-content .close {
+        top: -2.3%;
+        right: -4.2%;
+    }
+    .modal-content .modal-btn {
+        bottom: -3%;
+        right: -5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 100%;
+    }
+}

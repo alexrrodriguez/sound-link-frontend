@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Setup HEAD -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <meta name="author" content="">
+  <title>Contacts -- Musicians Premium HTML Template</title>
+
+  <!-- Import CSS -->
+  <link href="css/vendors/normalize.css" rel="stylesheet">
+  <link href="css/vendors/bootstrap.css" rel="stylesheet">
+  <link href="css/vendors/animate.css" rel="stylesheet">
+  <link href="css/vendors/ripple.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="page-nav">
+    <!-- Navigation -->
+    <nav class="navbar navbar-toggleable-md navbar-light navbar-bg">
+      <!-- Mobile nav toggler -->
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mob-nav" aria-controls="mob-nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Musicians LOGO -->
+      <a class="navbar-brand logo ripple" href="index.html">
+        <img src="img/logo.svg" alt="Musicians -- Premium HTML template" />
+      </a>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="mob-nav">
+        <!-- Main Menu -->
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              href="index.html">Home </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="index.html">Homepage Style 1</a>
+              <a class="dropdown-item ripple" href="index.html">Homepage Style 2</a>
+            </div>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              href="events.html">Events </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="events.html">Events</a>
+              <a class="dropdown-item ripple" href="single-event.html">Single Event</a>
+            </div>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              href="gallery.html">Gallery </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="gallery.html">Gallery</a>
+              <a class="dropdown-item ripple hidden-lg-up" href="single-gallery.html">Single Gallery 1</a>
+              <a class="dropdown-item ripple hidden-lg-up" href="single-gallery-2.html">Single Gallery 2</a>
+              <a class="dropdown-item ripple hidden-md-down" href="#">Single Gallery <span class="arrow-right"></span></a>
+              <div class="dropdown-submenu fadeInDown animated hidden-md-down">
+                <a class="dropdown-item ripple" href="single-gallery.html">Single Gallery 1</a>
+                <a class="dropdown-item ripple" href="single-gallery-2.html">Single Gallery 2</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              href="blog.html">Blog </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="blog.html">Blog</a>
+              <a class="dropdown-item ripple" href="single-post.html">Single Post</a>
+              <a class="dropdown-item ripple" href="single-post.html">Single Page</a>
+            </div>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              href="guestbook.html">Guestbook </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="guestbook.html">Guestbook</a>
+              <a class="dropdown-item ripple" href="single-guestbook.html">Single Guestbook</a>
+            </div>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link active ripple" href="contacts.html">Contacts <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              href="404.html">Error </a>
+            <div class="dropdown-menu fadeInDown animated">
+              <a class="dropdown-item ripple" href="404.html">404</a>
+              <a class="dropdown-item ripple" href="400.html">400</a>
+              <a class="dropdown-item ripple" href="403.html">403</a>
+              <a class="dropdown-item ripple" href="500.html">500</a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Social menu -->
+        <ul class="navbar-nav social-nav">
+          <li class="nav-item">
+            <a class="nav-link ripple" href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ripple" href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ripple" href="#">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page title section -->
+  <section class="section-bg after-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>Contacts</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact section -->
+  <section class="section-bg single-content-right">
+    <div class="row no-gutters">
+      <!-- Left side -->
+      <div class="col-lg-6">
+        <div class="left-side">
+          <!-- Contact map -->
+          <div id="map"></div>
+        </div>
+      </div>
+      <!-- End of left side -->
+
+      <!-- Right side -->
+      <div class="col-lg-6">
+        <div class="right-side purple">
+          <div class="row no-gutters">
+            <!-- Contact details -->
+            <div class="col-lg-12">
+              <h1>Contact details</h1>
+              <p>You can contact us anytime between 9:00 to 18:00 (GMT+2). We will be happy to help you out with any questions that you have related to this theme!</p>
+              <ul class="address-details">
+                <li><img src="img/phoneIcon.svg" alt="Contact Phone" width="30" height="30" /> +371 222-333-22</li>
+                <li><img src="img/mailIcon.svg" alt="Contact Email" width="30" height="30" /> info@musicians.com</li>
+                <li><img src="img/addressIcon.svg" alt="Contact Address" width="30" height="30" /> Riga, Doma Laukums 2</li>
+              </ul>
+              <h1>Leave your message</h1>
+              <p>We are happy to hear from you, please fill out the below form to contact us!</p>
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <div class="row">
+            <div class="col-md-4">
+              <div class="solid-form">
+                <input type="text" id="name" class="form-control">
+                <label for="name">Name</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="solid-form">
+                <input type="text" id="email-contact" class="form-control">
+                <label for="email-contact">Email</label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="solid-form">
+                <input type="text" id="subject" class="form-control">
+                <label for="subject">Subject</label>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <div class="solid-form">
+                <input type="text" id="messege" class="form-control">
+                <label for="messege">Message</label>
+              </div>
+            </div>
+            <div class="col-md-10 text-right">
+              <button type="button" class="btn btn-rounded2 ripple">Send</button>
+            </div>
+          </div>
+          <!-- End of contact form -->
+        </div>
+      </div>
+      <!-- End of Right side -->
+    </div>
+  </section>
+
+  <!-- General info section -->
+  <section class="general-info">
+    <div class="container">
+      <div class="row">
+        <!-- General info widget 1 -->
+        <div class="col-lg-6 general-info-block hidden-sm-down">
+          <h2>Musicians<br> Worspress theme</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet sem id erat commodo vulputate. Sed a
+            commodo quam. Curabitur id ante vel elit pellentesque eleifend vitae vel risus. Pellentesque tempus ex sit amet
+            nisl rutrum placerat. Sed vel mattis sem. Sed vel accumsan magna. Duis enim sapien, cursus ac enim sed, cursus
+            consectetur lorem. Integer egestas vulputate turpis, rhoncus ornare orci rhoncus eget. Sed lobortis sem eget
+            accumsan imperdiet. Vivamus aliquam quis urna in laoreet. Nunc rhoncus eleifend diam, porttitor interdum elit
+            commodo dictum</p>
+        </div>
+
+        <!-- General info widget 2 -->
+        <div class="col-lg-6 general-info-block">
+          <!-- Subscribe to newsletter form -->
+          <form>
+            <div class="form-group">
+              <label for="email">Subscribe to newsletter</label>
+              <div class="input-group">
+                <input class="solid-input form" type="email" id="email" placeholder="E-mail adress">
+                <span class="input-group-btn">
+                  <button class="btn btn-ok btn-okHome" type="button">OK</button>
+                </span>
+              </div>
+            </div>
+          </form>
+
+          <!-- Social media footer -->
+          <h4>Follow us on social media</h4>
+          <ul class="social-media">
+            <li>
+              <a class="ripple" href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a class="ripple" href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a class="ripple" href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer section -->
+  <footer class="section-bg">
+    <div class="footer-copyright">
+      <h6>All rights reserved <a href="http://solid-themes.com" target="_blank"> solid-themes</a> © 2017</h6>
+    </div>
+  </footer>
+
+  <!-- Load Scripts -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkfVHh-uOwogOE02TWC4MVx19GYh8oEp0"></script>
+  <script type="text/javascript">
+    // When the window has finished loading create our google map below
+    google.maps.event.addDomListener(window, 'load', init);
+
+    function init() {
+      // Basic options for a simple Google Map
+      // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+      let mapOptions = {
+        // How zoomed in you want the map to start at (always required)
+        zoom: 15,
+
+        // The latitude and longitude to center the map (always required)
+        center: new google.maps.LatLng(56.9496487, 24.10518639999998),
+
+        // How you would like to style the map.
+        // This is where you would paste any style found on Snazzy Maps.
+        styles: [{ "featureType": "landscape", "stylers": [{ "visibility": "simplified" }, { "color": "#2b3f57" }, { "weight": 0.1 }] }, { "featureType": "administrative", "stylers": [{ "visibility": "on" }, { "hue": "#ff0000" }, { "weight": 0.4 }, { "color": "#ffffff" }] }, { "featureType": "road.highway", "elementType": "labels.text", "stylers": [{ "weight": 1.3 }, { "color": "#FFFFFF" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#f55f77" }, { "weight": 3 }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#f55f77" }, { "weight": 1.1 }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#f55f77" }, { "weight": 0.4 }] }, {}, { "featureType": "road.highway", "elementType": "labels", "stylers": [{ "weight": 0.8 }, { "color": "#ffffff" }, { "visibility": "on" }] }, { "featureType": "road.local", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.arterial", "elementType": "labels", "stylers": [{ "color": "#ffffff" }, { "weight": 0.7 }] }, { "featureType": "poi", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi", "stylers": [{ "color": "#6c5b7b" }] }, { "featureType": "water", "stylers": [{ "color": "#f3b191" }] }, { "featureType": "transit.line", "stylers": [{ "visibility": "on" }] }]
+      };
+
+      // Get the HTML DOM element that will contain your map
+      // We are using a div with id="map" seen below in the <body>
+      let mapElement = document.getElementById('map');
+
+      // Create the Google Map using our element and options defined above
+      let map = new google.maps.Map(mapElement, mapOptions);
+
+      // Let's also add a marker while we're at it
+      let marker = new google.maps.Marker({
+        position: new google.maps.LatLng(56.9496487, 24.10518639999998),
+        map: map,
+        animation: google.maps.Animation.DROP,
+        icon: 'img/marker.png'
+      });
+    }
+  </script>
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/tether.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,396 @@
+/*------------------------------------------------------------------
+[Table of contents]
+Musicians - Premium Music|Event HTML Template
+Author: Solid-Themes
+Version: 1.0.0
+
+Single content right SCSS file for single content right aligned styles.
+
+1. Variables
+2. Global configuration.
+3. Single content right configuration.
+--3.1. White color configuration.
+--3.2. Purple color configuration.
+--3.3. Left Side configuration.
+--3.4. Right side configuration.
+-------------------------------------------------------------------*/
+
+/**
+1. Variables.
+*/
+$main-font: 'Teko',
+sans-serif;
+$sub-font: 'Roboto',
+sans-serif;
+$violet-color: #592ca9;
+$light-violet-color: #452877;
+$blue-color: #28dde0;
+$white: #fff;
+
+/**
+2. Global configuration.
+*/
+#map {
+    min-height: 600px;
+    height: 100%;
+    width: 100%;
+}
+
+/**
+3. Single content right configuration.
+*/
+.single-content-right {
+  padding: 0;
+  overflow-x: hidden;
+
+  /**
+  3.1. White color configuration.
+  */
+  .white {
+    position: relative;
+    background-color: $white;
+
+    h1 {
+      text-transform: uppercase;
+      color: #2a2a2a;
+      font-size: 4em;
+      line-height: 3.5rem;
+      width: 80%;
+      margin-top: 1.5rem;
+      margin-left: 0;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      color: #5c5c5c;
+      line-height: 1.3rem;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      padding: .5rem 0;
+      font-weight: 400;
+      font-size: 1.5em;
+      font-family: $sub-font;
+      font-weight: 300;
+    }
+
+    p {
+        margin-top: 2rem;
+        color: #8e8e8e;
+        line-height: 1.5rem;
+        font-size: 1.2em;
+    }
+  }
+  .scrollable {
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .scrollable::-webkit-scrollbar {
+      display: none;  // Safari and Chrome
+  }
+
+  /**
+  3.2. Purple color configuration.
+  */
+  .purple {
+    background-color: $violet-color !important;
+
+    .scrollable-indicator {
+      color: #fff;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    .comments {
+      max-height: 300px;
+    }
+
+    ul.address-details {
+      list-style: none;
+      padding: 0;
+      li {
+        background-repeat: no-repeat;
+        color: #fff;
+        font-size: 1.2rem;
+        line-height: 33px;
+        margin-top: .5em;
+        margin-left: .2em;
+        list-style: none;
+        font-family:$main-font;
+
+        img {
+          background-color: $light-violet-color;
+          border-radius: 50%;
+          padding: 0.4rem;
+          width: 30px;
+          height: 30px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .btn {
+      margin: 6px;
+    }
+
+    h1 {
+      color: #fff;
+      font-family: $sub-font;
+      font-weight: 500;
+      font-size: 2.5em;
+      text-transform: uppercase;
+      margin:0;
+      margin-top: 3rem;
+      padding-bottom: 1rem;
+    }
+
+    p {
+        margin-bottom: 2rem;
+        color: #fff;
+        font-size: 1em;
+        font-weight: 300;
+
+    }
+
+    p {
+      color: #fff;
+    }
+  }
+
+  /**
+  3.3. Left Side configuration.
+  */
+  .left-side {
+    min-height: 600px;
+    width: 100%;
+    height: 100%;
+    background-color: #282828;
+
+    iframe {
+      border: none;
+      height: 80px;
+      width: 100%;
+    }
+
+    .image {
+      min-height: 600px;
+      width: 100%;
+      border-radius: 0;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+
+    .band-stats {
+      position: absolute;
+      right: 0;
+      bottom: 105px;
+      z-index: 9999;
+      background-color: #fff;
+      padding: 1.5rem 4rem 2rem 1.5rem;
+
+      h1 {
+        color: #262626;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      h2 {
+        color: #828181;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      span {
+        i {
+          margin-right: .1rem;
+          color: #ffa800;
+        }
+      }
+    }
+  }
+
+  /**
+  3.4. Right Side configuration.
+  */
+  .right-side {
+    background-color: $light-violet-color;
+    min-height: 600px;
+    height: 100%;
+    overflow-x: hidden;
+    padding: 1.5rem 2rem;
+    padding-bottom: 4rem;
+
+    .comment-head {
+      button {
+        margin-left: 0;
+      }
+      h3 {
+        margin-bottom: 1.5rem;
+        color: #fff;
+        font-size: 1em;
+      }
+      .fb-btn {
+        background-color: #45619d;
+        color: #fff;
+        text-transform: capitalize;
+        border: none;
+      }
+      .fb-btn:hover {
+        background-color: #5a95f5;
+      }
+      .fb-btn i,
+      .anony-btn i {
+        margin-right: .4rem;
+        text-transform: none;
+      }
+      .anony-btn {
+        background-color: $blue-color;
+        color: #fff;
+        text-transform: capitalize;
+        border: none;
+      }
+      .anony-btn:hover {
+        background-color: #5a95f5;
+      }
+    }
+
+    .comment {
+      margin: 1rem;
+      padding: 1rem;
+      background-color: #fff;
+      p {
+        color: #8e8e8e;
+      }
+
+      .profile-img-frame {
+        width: 70%;
+        height: 60px;
+        img {
+          width: 100%;
+          height: 100%;
+          -o-object-fit: cover;
+          object-fit: cover;
+        }
+      }
+
+      .user {
+        font-size: 1.5em;
+        font-weight: 300;
+        font-style: italic;
+        font-family: 'Roboto', sans-serif;
+        padding: 0;
+        margin: 0;
+        margin-top: .3rem;
+        color: #212121;
+      }
+
+      .comment-details {
+        list-style: none;
+        padding: 0;
+        li {
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          font-size: .7em;
+          padding-right: .5rem;
+          i {
+            padding-right: .4rem;
+            padding-top: .2rem;
+          }
+        }
+      }
+    }
+
+    .btn-rounded2 {
+        background-color: #28dde0;
+        border-radius: 50px;
+        font-family: "Teko", sans-serif;
+        font-weight: 400;
+        font-size: 1.5em;
+        padding: 8px 50px 7px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #fff;
+    }
+
+    .btn-rounded2:hover {
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      transition: all .2s ease-in;
+    }
+
+    .solid-form {
+      margin-top: .8rem;
+      position: relative;
+      margin-bottom: 1.5rem;
+
+      .form-control {
+        padding: 0;
+        padding-top: 1rem;
+      }
+
+      input {
+        background-color: transparent;
+        border-radius: 0;
+        border: 0;
+        height: 3.1rem;
+        border-bottom: 2px;
+      }
+
+      label {
+          font-family: $sub-font;
+          text-transform: uppercase;
+          font-weight: 500;
+          font-size: 1.4em;
+          position: absolute;
+          top: .8rem;
+          color: #fff;
+          transition: top .05s ease-in-out;
+      }
+
+
+      input[type=text],
+      input[type=email] {
+        padding-left:0;
+        color: $white;
+        border-bottom: 2px solid $white;
+      }
+
+      input[type=text]:focus {
+        border-bottom: 2px solid #ccc;
+      }
+
+      label.active {
+        line-height: .1rem;
+        top: .4rem;
+      }
+    }
+  }
+}
+
+.after-header {
+  padding: 0;
+  .container-fluid {
+    overflow: hidden;
+  }
+  h2 {
+    text-transform: uppercase;
+    font-size: 6em;
+    color: $white;
+    margin: 2.3rem 0 2.3rem 2rem;
+  }
+  h5 {
+    font-family: $main-font;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2em;
+    margin: 2.8rem 0 2.8rem 2rem;
+
+    i {
+      margin-right: 8px;
+      margin-top: 4px
+    }
+  }
+}

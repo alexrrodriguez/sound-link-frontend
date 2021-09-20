@@ -1,0 +1,915 @@
+/*------------------------------------------------------------------
+[Table of contents]
+Musicians - Premium Music|Event HTML Template
+Author: Solid-Themes
+Version: 1.0.0
+
+Main SCSS File with includes of all other files.
+
+1. Fonts.
+2. Variables.
+3. Global Configuration.
+4. Loading Screen.
+5. Homepage navigation and header configuration.
+6. Button and form configuration.
+7. Filter section configuration.
+8. Split section configuration.
+9. Swiper configuration.
+10. General info configuration.
+11. Footer configuration.
+12. Other file imports.
+-------------------------------------------------------------------*/
+
+/**
+1. Fonts
+*/
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Teko';
+    src: url("../fonts/Teko-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Teko';
+    src: url("../fonts/Teko-Regular.ttf") format("truetype");
+}
+
+@import 'vendors/font-awesome.scss';
+
+/**
+2. Variables
+*/
+$main-font: 'Teko',
+sans-serif;
+$sub-font: 'Roboto',
+sans-serif;
+$violet-color: #592ca9;
+$blue-color: #28dde0;
+$gray-color: #1f9393;
+
+/**
+3. General configuration.
+*/
+body {
+    font-family: $sub-font;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.no-content {
+    font-size: 6rem;
+    color: $gray-color;
+    text-transform: uppercase;
+}
+
+.grid-no-data {
+    display: none;
+}
+
+.btn {
+    font-size: .8rem;
+}
+
+h1,
+h2 {
+    font-family: $main-font;
+}
+
+.equal-cards > div > div.card {
+    height: calc(100% - 15px);
+    margin-bottom: 15px;
+}
+
+.section-main-title h2 {
+    text-transform: uppercase;
+    font-size: 6em;
+    color: #fff;
+}
+
+a {
+    color: #fff;
+}
+
+section {
+    padding: 2rem 0;
+}
+
+
+.section-bg {
+    background-color: $blue-color;
+    background-image: url(../img/pattern.svg);
+    background-size: cover;
+}
+
+/**
+4. Loading Screen
+*/
+.loading {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #37205c;
+}
+
+svg {
+    transform: scale(1.5);
+}
+body {
+  div.loaded {
+    nav.navbar.navbar-toggleable-md.navbar-light.navbar-bg {
+      background-color: transperant;
+      position: absolute;
+      top:0;
+      right:0;
+      left:0;
+      .navbar-brand {
+        z-index: 9998;
+      }
+    }
+  }
+}
+
+/**
+5. Homepage navigation and header configuration.
+*/
+.navbar {
+    box-shadow: none;
+    text-transform: uppercase;
+    font-family: $main-font;
+}
+
+.navbar.navbar-light .nav-item a {
+    color: #fff;
+    font-size: 1.8em;
+}
+
+.navbar.navbar-light .nav-item a:focus {
+    color: #fff;
+}
+
+.navbar .socialNavbar li {
+    cursor: pointer;
+}
+
+.navbar.navbar-light .nav-item a:hover {
+    color: $blue-color;
+}
+
+.jumbotron {
+    padding: 2rem;
+    .navbar {
+        padding: .5rem 1rem;
+    }
+}
+
+.navbar.navbar-light .breadcrumb.active,
+.navbar.navbar-light .nav-item.active {
+    background-color: transparent;
+    color: $blue-color;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .modal-content .solid-form label.active {
+    color: $blue-color;
+}
+
+.logo {
+    align-self: flex-start;
+    img {
+        width: 70px;
+        height: auto;
+    }
+}
+
+.jumbotron {
+    background-image: url(../img/jumbotron-img-min.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.headline {
+    margin-top: 16rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.7em;
+    line-height: 4.5rem;
+}
+
+.headline-left {
+    color: $blue-color;
+    font-size: 3.7em;
+    line-height: 4.5rem;
+}
+
+.headline-right {
+    font-size: 2.1em;
+    word-spacing: 9999999px;
+    line-height: 2.9rem;
+}
+
+.add-event-jumbotron {
+    position: relative;
+    float: right;
+    top: 20%;
+}
+
+.add-event-jumbotron h4 {
+    float: left;
+    font-size: 1.3em;
+    color: #fff;
+    margin: 1.2rem .4rem 0;
+}
+
+/**
+6. Button and form configuration.
+*/
+
+.btn.btn-fab, .btn-fab {
+    cursor: pointer;
+    font-size: .8rem;
+    padding: 1rem;
+    border-radius: 50px;
+    border: 0;
+    margin: 6px;
+    white-space: normal;
+    background: #fff;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+}
+
+.btn.btn-fab:hover, .btn-fab:hover {
+    background-color: #5affff;
+    img {
+        transform: rotate(90deg);
+        transform-origin: 50% 50%;
+        transition: all .2s ease-in;
+    }
+}
+
+.btn-back {
+    position: absolute;
+    top: -6.5%;
+    right: 5%;
+    z-index: 1000;
+}
+
+.btn.btn-rounded {
+    border: none;
+    background-color: $blue-color;
+    border-radius: 50px;
+    font-family: $main-font;
+    font-weight: 400;
+    font-size: .8em;
+    padding: 8px 30px 7px;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.btn-all,
+.pluss-button,
+.pluss-button2 {
+    font-family: $main-font;
+    text-transform: uppercase;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.pluss-button {
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.pluss-button {
+    float: right;
+}
+
+.pluss-button i,
+.pluss-button2 i {
+    margin: 2px 4px 0;
+}
+
+.pluss-button i,
+.pluss-button h5 {
+    float: left;
+}
+
+.pluss-button2 i,
+.pluss-button2 h5 {
+    float: left;
+}
+
+.pluss-button2 {
+    float: left;
+    width: 100%;
+    margin-left: 1rem;
+}
+
+input[type=text]:focus,
+input[type=email]:focus {
+    border: 0;
+    box-shadow: none;
+}
+
+.input-group input.solid-input[type=text],
+.input-group input.solid-input[type=email] {
+    padding-left: 2rem;
+}
+
+input[type=email] {
+    border-bottom: none;
+}
+
+.btn-ok {
+    font-size: .8rem;
+    border: none;
+    color: $violet-color;
+}
+
+.btn-ok:hover {
+    color: $blue-color;
+}
+
+.btn-amber.active,
+.btn-blue-grey.active,
+.btn-brown.active,
+.btn-cyan.active,
+.btn-danger.active,
+.btn-dark-green.active,
+.btn-deep-orange.active,
+.btn-deep-purple.active,
+.btn-default.active,
+.btn-elegant.active,
+.btn-indigo.active,
+.btn-info.active,
+.btn-light-green.active,
+.btn-lime.active,
+.btn-mdb.active,
+.btn-orange.active,
+.btn-pink.active,
+.btn-primary.active,
+.btn-purple.active,
+.btn-secondary.active,
+.btn-secondary.dropdown-toggle,
+.btn-success.active,
+.btn-unique.active,
+.btn-warning.active,
+.btn-yellow.active,
+.btn.active,
+.btn:active,
+.btn:focus,
+.btn:hover,
+.card .form-header,
+.media .media-left img,
+.modal-dialog .modal-content,
+.modal-dialog.cascading-modal .modal-header,
+.modal-dialog.modal-notify.modal-danger .btn-primary-modal.active,
+.modal-dialog.modal-notify.modal-info .btn-primary-modal.active,
+.modal-dialog.modal-notify.modal-success .btn-primary-modal.active,
+.modal-dialog.modal-notify.modal-warning .btn-primary-modal.active,
+.pager li a:hover,
+.section .view,
+.section img,
+.tooltip .tooltip-inner,
+.z-depth-1-half,
+ul.instagram-photos li img {
+    box-shadow: none;
+}
+
+
+/**
+7. Filter section configuration.
+*/
+.filter-section {
+    .col-lg-4 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .filter-list {
+        padding: 0;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        font-size: 2.2em;
+        line-height: 1.7rem;
+        a {
+            cursor: pointer;
+            color: #212121;
+            font-family: $main-font;
+            text-transform: uppercase;
+        }
+        a.active, a:hover {
+            color: $violet-color;
+        }
+
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+.li-divider::after {
+    content: ' / ';
+    color: #212121;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    border-radius: 0;
+    margin: 1rem;
+}
+
+.hoverable {
+    transition: box-shadow .55s;
+}
+
+.hoverable:hover {
+    transition: box-shadow .45s;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
+}
+
+.card-block {
+    padding-bottom: 0;
+}
+
+.card-block p {
+    margin-bottom: .5rem
+}
+
+.card img {
+    object-fit: cover;
+    border-radius: 0;
+    height: 280px;
+    width: 100%;
+}
+
+.card .img-mask {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    background-attachment: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    transition: all .4s ease-in-out;
+}
+
+.card .overlay:hover .img-mask {
+    opacity: 1;
+}
+
+.card .img-mask {
+    background-color: rgba(255,255,255,.1);
+}
+
+.card-title {
+    font-family: $main-font;
+    text-transform: uppercase;
+    color: #5c5c5c;
+    font-size: 2.1em;
+    margin: 0;
+}
+
+.card-text {
+    color: #8e8e8e;
+    font-size: 0.9em;
+}
+
+.filter-card-details {
+    font-size: 1.2em;
+    ul {
+        padding: 0;
+        li {
+            display: inline-block;
+            font-size: 0.8em;
+            color: #a7a5a5;
+            i {
+                padding: 0 .4rem;
+            }
+        }
+        i {
+            color: #a7a5a5;
+        }
+    }
+}
+
+/**
+8. Split section configuration.
+*/
+.split-section {
+    padding: 0;
+    background-color: $violet-color;
+    overflow: hidden;
+    .col-lg-6 {
+        padding: 0;
+    }
+
+    a:hover {
+        color: $blue-color;
+    }
+
+    .left-side {
+        min-height: 800px;
+        width: 100%;
+        height: 100%;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            display: none;
+            border-radius: 0;
+        }
+        .active {
+            display: block;
+        }
+    }
+
+    .right-side {
+        padding-left: 2rem;
+
+        h2 {
+            color: $blue-color;
+            padding-top: 4rem;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            display: block;
+        }
+
+        a {
+            cursor: pointer;
+            font-family: $main-font;
+            text-transform: uppercase;
+            font-size: 2.5em;
+            color: #fff;
+            transition: color .1s ease-in;
+        }
+
+        a:hover {
+            color: $blue-color;
+        }
+    }
+}
+
+/**
+9. Swiper configuration.
+*/
+.section-swiper {
+    padding-bottom: 3rem;
+
+    .swiper-container {
+        margin-top: 3rem;
+
+        .swiper-slide {
+            padding: 0;
+        }
+
+        .swiper-img-frame {
+            width: 100%;
+            height: 370px;
+            position: relative;
+
+            img {
+                width: 70%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .swiper-content {
+            font-size: .9em;
+            background-color: $violet-color;
+            padding: .7rem .7rem .7rem 1.5rem;
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            max-width: 250px;
+
+            h3, p {
+                color: #fff;
+            }
+
+            h3 {
+                font-size: 1.5em;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-top: 1rem;
+            }
+
+            p {
+                margin-top: 1rem;
+            }
+
+            h5 {
+                font-size: 1.2em;
+                text-transform: uppercase;
+                font-family: $main-font;
+                color: $blue-color;
+            }
+
+            h5:hover {
+                color: #fff;
+            }
+
+            .fa-facebook {
+                float: right;
+                color: $blue-color;
+            }
+
+            a i:hover, a i:active {
+                cursor: pointer;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.button-padding .btn-all {
+    padding-top: 5rem;
+}
+
+.swiper-pagination-bullet {
+    background-color: $violet-color;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $violet-color;
+}
+
+.swiper-pagination-bullet+.swiper-pagination-bullet {
+    margin: 3rem 1rem 0 0;
+}
+
+.swiper-pagination-bullet:first-child {
+    margin: 3rem 1rem 0 0;
+}
+.swiper-pagination-bullet:last-child {
+    margin: 3rem 0 0 0;
+}
+
+.btn-ok {
+    background-color: #fff;
+}
+
+/**
+10. General info configuration.
+*/
+.general-info {
+    position: relative;
+    background-color: $violet-color;
+    height: auto;
+    width: 100%;
+    color: #fff;
+    z-index: 1000 ;
+
+    .solid-input {
+        height: 2.15rem ;
+    }
+    
+    .btn {
+        cursor: pointer;
+        background-color: #fff;
+    }
+
+    .btn-back:hover {
+        box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        background-color: $blue-color;
+        img {
+            margin-top: -5px;
+            transform: rotate(0deg);
+            transform-origin: 50% 50%;
+            transition: all .2s ease-in-out;
+        }
+    }
+
+    a, i {
+        color: #28dde0;
+    }
+
+    label {
+        text-transform: uppercase;
+        font-size: 2.5em;
+        line-height: 1em;
+        font-weight: 700;
+    }
+
+    .general-info-block {
+        padding: 0 6rem;
+        i:hover {
+        color:#fff;
+        }
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 3em;
+        margin-top: 2rem;
+    }
+    h4 {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.2em;
+    }
+}
+
+.form-group {
+    margin-top: 2rem;
+}
+
+.solid-input {
+    background-color: #fff;
+    margin: 1rem 0;
+    height: 2.1rem;
+    width: 100%;
+    border-radius: 0;
+    outline: 0;
+    box-sizing: content-box;
+    font-size: 1rem;
+    box-shadow: none;
+    border: none;
+    padding: .11rem;
+}
+
+.input-group-btn >.btn {
+    -webkit-box-flex: none;
+    -ms-flex: none;
+    flex: none;
+    margin: 6px;
+}
+
+.general-info-block .form-group .input-group input[type=email] {
+    height: 2.15rem;
+}
+
+a {
+    cursor: pointer;
+}
+
+.btn {
+    cursor: pointer;
+    outline: none;
+    padding: .711rem;
+    border-radius: 0;
+    font-weight: 700;
+    box-shadow: none;
+}
+
+.btn:focus, button:focus {
+    outline: 0;
+}
+
+.btn::hover {
+    box-shadow: none;
+}
+
+.social-media {
+    padding: 0;
+    li {
+        cursor: pointer;
+        font-size: 2em;
+        display: inline-block;
+        padding: 0 .5rem;
+        color: $blue-color;
+    }
+    li:first-child {
+        padding: 0 .5rem 0 0;
+    }
+}
+
+section{
+  div.container-fluid{
+    div.row.no-gutters{
+      div.col-lg-6{
+        div.block{
+          ul.social {
+            li{
+              a:hover{
+                color:#fff;
+              }
+            }
+          }
+        }
+      }
+    }
+}
+}
+
+/**
+11. Footer configuration.
+*/
+footer {
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer-copyright h6 {
+    padding: 2.5rem 0 2rem 0;
+    color: $violet-color;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.add-event-jumbotron:hover {
+    h4 {
+      color:#5affff;
+    }
+    button {
+      background-color: $blue-color;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+       img {
+      transform: rotate(90deg);
+      transform-origin: 50% 50%;
+      transition: all .2s ease-in;
+    }
+  }
+}
+
+header.jumbotron {
+  div.container {
+    div.row.headline {
+      div.col-md-12.text-center {
+        a.btn.btn-rounded:hover {
+          background-color: $violet-color;
+          box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+        }
+      }
+    }
+  }
+}
+
+.add-event-section-btn {
+  .btn-fab:hover {
+    background-color: $blue-color;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+     img {
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+    transition: all .2s ease-in;
+  }
+  }
+}
+
+
+.input-group-btn {
+    margin-top: 1rem;
+}
+
+
+section.general-info button:hover, section.general-info button.btn.btn-okHome:hover {
+  background-color:  #fff;
+  color: $blue-color;
+}
+
+/**
+12. Other file imports.
+*/
+@import '_mobile.scss';
+@import '_single-content-left.scss';
+@import '_single-content-right.scss';
+@import '_ind-gallery.scss';
+@import '_modal.scss';
+@import '_dropdown.scss';
+@import '_hover.scss';
+@import '_four-column-list.scss';
+@import '_five-column-list.scss';
+@import '_one-column-list.scss';
+@import '_error.scss';

@@ -1,0 +1,227 @@
+/*------------------------------------------------------------------
+[Table of contents]
+Musicians - Premium Music|Event HTML Template
+Author: Solid-Themes
+Version: 1.0.0
+
+Mobile SCSS file for global mobile styles.
+
+1. Variables
+2. Global Mobile configuration.
+-------------------------------------------------------------------*/
+
+/**
+1. Variables.
+*/
+$violet-color: #592ca9;
+
+/**
+2. Global Mobile configuration.
+*/
+@media screen and (max-width: 1199px) {
+    .general-info-block .form-group .input-group input[type=email] {
+        height: 34px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .social-nav {
+        display: flex;
+        flex-direction: row;
+        li {
+            width: 33%;
+        }
+    }
+    .scrollable {
+        overflow-y: hidden;
+        max-height: none;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .general-info-block .form-group .input-group input[type=email] {
+        height: 33px;
+    }
+    .add-event-jumbotron {
+        top: 12%;
+    }
+
+    .socialNavbar {
+        text-align: center;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .headline {
+      margin-top: 12rem;
+    }
+    .events .container {
+        width: 90%;
+    }
+    .jumbotron {
+        min-height: 668px;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+    .btn-rounded {
+        text-align: left;
+    }
+    .add-event-jumbotron h4 {
+        display: none;
+    }
+    .add-event-jumbotron {
+        top: 14%;
+    }
+    .gallery {
+        padding-bottom: 3rem;
+    }
+    .general-info-block .form-group .input-group input[type=email] {
+        height: 2.3rem;
+    }
+
+    .card  {
+      margin: 1rem;
+    }
+    .card img {
+      height: 320px;
+    }
+
+    .socialNavbar {
+        text-align: center;
+    }
+    .page-ind-gallery .frame2,
+    .page-ind-gallery .frame3 img {
+      height: 150px;
+    }
+
+
+}
+
+@media screen and (max-width: 650px) {
+    .comment .user {
+        font-size: 1.2em;
+    }
+    .single-content-left .white h1 {
+        font-size: 3em;
+        width: 100%;
+    }
+    .latest-galleries-list {
+        li {
+            margin-top: 1.5rem;
+        }
+    }
+    .section-main-title {
+        font-size: 0.7rem;
+    }
+    .section-main-title h2 {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .add-event-jumbotron {
+        top: 12%;
+    }
+    .headline-left,
+    .headline-right {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .jumbotron {
+        min-height: 520px;
+    }
+    .headline {
+        margin-top: 8rem;
+        font-size: 1.4em;
+    }
+    .headline-left {
+        line-height: 3.1rem;
+        font-size: 3em;
+        margin-bottom: 0;
+    }
+    .headline-right {
+        line-height: 2.3rem;
+    }
+    .headline-h2 {
+        font-size: 4.7em;
+        text-align: center;
+    }
+    .pluss-button,
+    .pluss-button2,
+    .pluss-button2 h5,
+    .pluss-button h5 {
+        font-size: 1.5em;
+    }
+    .btn-rounded {
+        padding: 8px 40px 7px;
+    }
+    .card img {
+        height: auto;
+    }
+    .gallery .headline-h2 {
+        padding-bottom: 1.5rem;
+    }
+    .gallery ul li {
+        padding-bottom: 1rem;
+    }
+    .gallery-name {
+        font-size: 1.9em;
+        line-height: 1em;
+    }
+    .gallery-right-side {
+        padding-left: 0rem;
+    }
+    .gallery .col-lg-6 {
+        padding: 0 15px;
+    }
+    .general-info {
+        padding-top: 2rem;
+    }
+    .general-info-block {
+        padding: 0 1rem;
+    }
+    .genral-info label {
+        font-size: 2.3em;
+    }
+    .general-info-block .form-group .input-group input[type=email] {
+        height: 2.2rem;
+    }
+    .social-media {
+        li {
+            font-size: 1.7em;
+        }
+    }
+
+    .section-swiper {
+        .swiper-paginate {
+            padding-left: 0px;
+        }
+    }
+
+    .add-event-jumbotron {
+      top: 47%;
+  }
+
+
+}
+
+@media screen and (max-width: 400px) {
+    .jumbotron {
+      height: 600px;
+    }
+    .btn-rounded {
+      margin-left: 1rem;
+    }
+
+    .add-event-jumbotron {
+      top: 9.5%;
+  }
+  .pluss-button2{
+    margin-left: 8rem;
+  }
+}
