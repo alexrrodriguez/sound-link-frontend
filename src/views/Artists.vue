@@ -9,17 +9,20 @@
     <button @click="artistInfo">Search!</button>
     <br />
     <hr />
+    <ul>
+      <li v-for="error in errors" :key="error">{{ error }}</li>
+    </ul>
     <div v-if="artists.length !== 0">
       <h2>{{ artists.name }}</h2>
-      <p>
-        <a :href="artists.url">{{ artists.url }}</a>
-      </p>
       <p>{{ summary }}</p>
       <button v-on:click="showBio">Show Biography</button>
       <h5>Tags:</h5>
       <div v-for="tag in tags" :key="tag.id">
         <p>{{ tag.name }}</p>
       </div>
+      <p>
+        <a :href="artists.url">Last FM Artist Page</a>
+      </p>
       <dialog id="bio-details">
         <form method="dialog">
           <h3>Biography:</h3>
@@ -58,6 +61,8 @@ export default {
   data: function () {
     return {
       message: "Search for Artist!",
+      errors: [],
+      events: [],
       artists: [],
       artistSearch: "",
       tags: [],
@@ -92,7 +97,10 @@ export default {
           console.log(this.wiki);
           this.similars = response.data.artist.similar.artist;
           console.log(this.similars);
-          window.scrollTo(0, 0);
+        })
+        .catch((error) => {
+          console.log(error.response);
+          this.errors = ["No Search Results Available.."];
         });
       axios
         .get(
@@ -102,6 +110,11 @@ export default {
           console.log("artist albums", response);
           this.albums = response.data.topalbums.album;
           console.log(this.albums);
+          window.scrollTo(0, 0);
+        })
+        .catch((error) => {
+          console.log(error.response);
+          this.errors = ["No Search Results Available.."];
         });
     },
     showBio: function () {
