@@ -10,7 +10,7 @@
                 <h1>Top 50 Artist Chart</h1>
                 <hr />
                 <div class="row justify-content-center no-gutters match-height chart-list-container">
-                  <div class="col-12 col-sm-12 col-md-6 col-lg-6 event-rap event-anniversary event-romance">
+                  <div class="col-12 col-sm-12 col-md-6 col-lg-8 event-rap event-anniversary event-romance">
                     <div class="chart-list-container">
                       <ol class="chart-list">
                         <li v-for="artist in artists" :key="artist.id">
@@ -42,7 +42,7 @@
                 <h1>Top 50 Tracks Chart</h1>
                 <hr />
                 <div class="row justify-content-center match-height">
-                  <div class="col-12 col-sm-12 col-md-6 col-lg-6 event-card event-rap event-anniversary event-romance">
+                  <div class="col-12 col-sm-12 col-md-6 col-lg-8 event-card event-rap event-anniversary event-romance">
                     <div class="chart-list-container">
                       <ol class="chart-list">
                         <li v-for="track in tracks" :key="track.id">
@@ -71,15 +71,11 @@
 </template>
 
 <style>
-.chart-list {
-}
 .chart-list-container {
   overflow: auto;
 }
 .artist-name-track {
   color: white;
-}
-.track-title {
 }
 .chart-title {
   text-align: center;
@@ -89,18 +85,18 @@
   position: relative;
 }
 .artist-chart {
-  margin: 0.5%;
+  margin: 1%;
   border: 1px solid black;
   text-align: center;
   display: inline-block;
-  width: 49%;
+  width: 48%;
 }
 .track-chart {
-  margin: 0.5%;
+  margin: 1%;
   border: 1px solid black;
   text-align: center;
   display: inline-block;
-  width: 49%;
+  width: 48%;
 }
 .more-info-artist {
   color: blue;

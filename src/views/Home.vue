@@ -33,12 +33,12 @@
     <!-- Item Filter section -->
     <section class="section-bg filter-section events">
       <div class="container">
-        <div class="row">
+        <div class="row home-search-header">
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
             <h2>Search For Events</h2>
           </div>
 
-          <div class="col-lg-6 col-md-8">
+          <div class="col-lg-12 col-md-12">
             <h2>Search by City:</h2>
             <input type="text" v-model="citySearch" placeholder="enter city.." />
             <br />
@@ -71,6 +71,7 @@
             <br />
             <br />
             <button @click="indexEvents">Search</button>
+            <hr />
           </div>
         </div>
 
@@ -262,7 +263,8 @@
 </template>
 
 <style>
-.events-section {
+.home-search-header {
+  text-align: center;
 }
 </style>
 
@@ -296,7 +298,7 @@ export default {
 
       axios
         .get(
-          `discovery/v2/events.json?size=10&city=${this.citySearch}&genreId=${this.genreSearch}&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=${apiKey}`
+          `discovery/v2/events.json?size=50&city=${this.citySearch}&genreId=${this.genreSearch}&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=${apiKey}`
         )
         .then((response) => {
           console.log("events index", response);
