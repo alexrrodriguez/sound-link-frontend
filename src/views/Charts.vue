@@ -1,38 +1,111 @@
 <template>
   <div class="charts">
-    <h1>{{ message }}</h1>
-    <hr />
-    <h1>Top 50 Artist Chart</h1>
-    <hr />
-    <div v-for="artist in artists" :key="artist.id">
-      <h2>{{ artist.name }}</h2>
-      <p>
-        <a :href="artist.url">{{ artist.url }}</a>
-      </p>
-      <h5>Playcount:</h5>
-      <p>{{ artist.playcount }}</p>
-      <h5>Listeners:</h5>
-      <p>{{ artist.listeners }}</p>
-      <hr />
-    </div>
-    <h1>Top 50 Tracks Chart</h1>
-    <hr />
-    <div v-for="track in tracks" :key="track.id">
-      <h2>Title: {{ track.name }}</h2>
-      <h3>Artist: {{ track.artist.name }}</h3>
-      <p>
-        <a :href="track.url">{{ track.url }}</a>
-      </p>
-      <h5>Playcount:</h5>
-      <p>{{ track.playcount }}</p>
-      <h5>Listeners:</h5>
-      <p>{{ track.listeners }}</p>
-      <hr />
+    <h1 class="chart-title">{{ message }}</h1>
+    <div class="chart-wrapper">
+      <div class="artist-chart">
+        <section class="section-bg filter-section events">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
+                <h1>Top 50 Artist Chart</h1>
+                <hr />
+                <div class="row justify-content-center no-gutters match-height chart-list-container">
+                  <div class="col-12 col-sm-12 col-md-6 col-lg-6 event-rap event-anniversary event-romance">
+                    <div class="chart-list-container">
+                      <ol class="chart-list">
+                        <li v-for="artist in artists" :key="artist.id">
+                          <div>
+                            <h2>{{ artist.name }}</h2>
+
+                            <h5>Playcount:</h5>
+                            <p>{{ artist.playcount }}</p>
+                            <h5>Listeners:</h5>
+                            <p>{{ artist.listeners }}</p>
+                            <a class="more-info-artist" :href="artist.url">More Info</a>
+                            <hr />
+                          </div>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="track-chart">
+        <section class="section-bg filter-section events">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
+                <h1>Top 50 Tracks Chart</h1>
+                <hr />
+                <div class="row justify-content-center match-height">
+                  <div class="col-12 col-sm-12 col-md-6 col-lg-6 event-card event-rap event-anniversary event-romance">
+                    <div class="chart-list-container">
+                      <ol class="chart-list">
+                        <li v-for="track in tracks" :key="track.id">
+                          <h2 class="track-title">{{ track.name }}</h2>
+                          <h1>By</h1>
+                          <h4 class="artist-name-track">{{ track.artist.name }}</h4>
+                          <br />
+                          <h5>Playcount:</h5>
+                          <p>{{ track.playcount }}</p>
+                          <h5>Listeners:</h5>
+                          <p>{{ track.listeners }}</p>
+                          <a class="more-info-artist" :href="track.url">More Info</a>
+                          <hr />
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+.chart-list {
+}
+.chart-list-container {
+  overflow: auto;
+}
+.artist-name-track {
+  color: white;
+}
+.track-title {
+}
+.chart-title {
+  text-align: center;
+  font-size: 3rem;
+}
+.chart-wrapper {
+  position: relative;
+}
+.artist-chart {
+  margin: 0.5%;
+  border: 1px solid black;
+  text-align: center;
+  display: inline-block;
+  width: 49%;
+}
+.track-chart {
+  margin: 0.5%;
+  border: 1px solid black;
+  text-align: center;
+  display: inline-block;
+  width: 49%;
+}
+.more-info-artist {
+  color: blue;
+}
+</style>
 
 <script>
 import axios from "axios";
