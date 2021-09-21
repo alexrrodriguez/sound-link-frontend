@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row home-search-header">
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
-            <h4>Search Artist:</h4>
+            <h1 class="chart-title-header">Search Artist:</h1>
             <input
               class="solid-input form artist-input"
               type="text"

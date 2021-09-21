@@ -40,11 +40,11 @@
           </div>
 
           <div class="col-lg-12 col-md-12">
-            <h2>Search by City:</h2>
+            <h1 class="chart-title-header">Search by City:</h1>
             <input type="text" v-model="citySearch" placeholder="enter city.." />
             <br />
             <br />
-            <h2>Search by Genre:</h2>
+            <h1 class="chart-title-header">Search by Genre:</h1>
             <select v-model="genreSearch">
               <option value="">--Select Genre--</option>
               <option value="KnvZfZ7vAvv">Alternative</option>

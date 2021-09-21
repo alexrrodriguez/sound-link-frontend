@@ -1,13 +1,13 @@
 <template>
   <div class="charts">
-    <h1 class="chart-title">{{ message }}</h1>
+    <h1 class="chart-title-header">{{ message }}</h1>
     <div class="chart-wrapper">
       <div class="artist-chart">
         <section class="section-bg filter-section events">
           <div class="container">
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
-                <h1>Top 50 Artist Chart</h1>
+                <h1 class="chart-title">Top 50 Artist Chart</h1>
                 <hr />
                 <div class="row justify-content-center no-gutters match-height chart-list-container">
                   <div class="col-12 col-sm-12 col-md-6 col-lg-8 event-rap event-anniversary event-romance">
@@ -39,7 +39,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
-                <h1>Top 50 Tracks Chart</h1>
+                <h1 class="chart-title">Top 50 Tracks Chart</h1>
                 <hr />
                 <div class="row justify-content-center match-height">
                   <div class="col-12 col-sm-12 col-md-6 col-lg-8 event-card event-rap event-anniversary event-romance">
@@ -77,9 +77,13 @@
 .artist-name-track {
   color: white;
 }
-.chart-title {
+.chart-title-header {
   text-align: center;
   font-size: 3rem;
+}
+.chart-title {
+  text-align: center;
+  font-size: 2.4rem;
 }
 .chart-wrapper {
   position: relative;
