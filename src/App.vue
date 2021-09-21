@@ -98,11 +98,7 @@
         <div class="row">
           <!-- General info widget 1 -->
           <div class="col-lg-6 general-info-block hidden-sm-down">
-            <h2>
-              Musicians
-              <br />
-              Worspress theme
-            </h2>
+            <h2>Sound Link</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet sem id erat commodo vulputate.
               Sed a commodo quam. Curabitur id ante vel elit pellentesque eleifend vitae vel risus. Pellentesque tempus
@@ -153,9 +149,9 @@
     <footer class="section-bg">
       <div class="footer-copyright">
         <h6>
-          All rights reserved
-          <a href="http://solid-themes.com" target="_blank">solid-themes</a>
-          © 2017
+          Created By
+          <a href="https://alexanderrodriguez.dev/" target="_blank">Alexander Rodriguez</a>
+          © 2021
         </h6>
       </div>
     </footer>
