@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row home-search-header">
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
-            <h1 class="chart-title-header">Search Artist:</h1>
+            <h2 class="search-artist-header">Search Artist:</h2>
             <input
               class="solid-input form artist-input"
               type="text"
@@ -23,15 +23,17 @@
             </ul>
             <div v-if="artists.length !== 0">
               <br />
-              <h2>{{ artists.name }}</h2>
+              <h2 class="artist-name-title">{{ artists.name }}</h2>
               <p>{{ summary }}</p>
               <button v-on:click="showBio">Show Biography</button>
               <br />
               <br />
-              <h5>Tags:</h5>
+              <hr />
+              <h5 class="tag-title">Tags:</h5>
               <div v-for="tag in tags" :key="tag.id">
                 <p>{{ tag.name }}</p>
               </div>
+              <hr />
               <h5>
                 <a :href="artists.url">Last FM Artist Page</a>
               </h5>
@@ -47,15 +49,14 @@
               </dialog>
               <hr />
               <br />
-              <h4>Albums:</h4>
-              <br />
+              <h2>Albums:</h2>
               <div v-for="album in albums" :key="album.id">
                 <h5>
                   <a :href="album.url">{{ album.name }}</a>
                 </h5>
               </div>
               <hr />
-              <h4>Similar Artists:</h4>
+              <h2>Similar Artists:</h2>
               <div class="col-lg-12 col-md-12 col-sm-10">
                 <div class="row no-gutters justify-content-center match-height">
                   <!-- Small Card -->
@@ -89,8 +90,15 @@
 </template>
 
 <style>
+.tag-title {
+  color: white;
+  font-size: 1.5rem;
+}
 .artist-input {
   width: 35%;
+}
+.artist-name-title {
+  font-weight: bold;
 }
 </style>
 
