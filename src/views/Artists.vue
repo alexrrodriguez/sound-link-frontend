@@ -1,58 +1,105 @@
 <template>
   <div>
-    <h1>{{ message }}</h1>
-    <hr />
-    <h3>Search Artist:</h3>
-    <input type="text" v-model="artistSearch" placeholder="enter artist name.." />
-    <br />
-    <br />
-    <button @click="artistInfo">Search!</button>
-    <br />
-    <hr />
-    <ul>
-      <li v-for="error in errors" :key="error">{{ error }}</li>
-    </ul>
-    <div v-if="artists.length !== 0">
-      <h2>{{ artists.name }}</h2>
-      <p>{{ summary }}</p>
-      <button v-on:click="showBio">Show Biography</button>
-      <h5>Tags:</h5>
-      <div v-for="tag in tags" :key="tag.id">
-        <p>{{ tag.name }}</p>
-      </div>
-      <p>
-        <a :href="artists.url">Last FM Artist Page</a>
-      </p>
-      <dialog id="bio-details">
-        <form method="dialog">
-          <h3>Biography:</h3>
-          <p>{{ bio }}</p>
-          <a :href="wiki">{{ artists.name }} Wikepedia Page</a>
-          <br />
-          <br />
-          <button>Close</button>
-        </form>
-      </dialog>
-      <hr />
-      <h4>Albums:</h4>
-      <div v-for="album in albums" :key="album.id">
-        <h5>
-          <a :href="album.url">{{ album.name }}</a>
-        </h5>
-      </div>
-      <hr />
-      <h4>Similar Artists:</h4>
+    <section class="section-bg filter-section events">
+      <div class="container">
+        <div class="row home-search-header">
+          <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
+            <h4>Search Artist:</h4>
+            <input
+              class="solid-input form artist-input"
+              type="text"
+              id="blog-search"
+              placeholder="enter artist name.."
+              v-model="artistSearch"
+            />
+            <br />
+            <br />
+            <button @click="artistInfo">Search!</button>
+            <br />
+            <br />
+            <hr />
+            <ul>
+              <li v-for="error in errors" :key="error">{{ error }}</li>
+            </ul>
+            <div v-if="artists.length !== 0">
+              <br />
+              <h2>{{ artists.name }}</h2>
+              <p>{{ summary }}</p>
+              <button v-on:click="showBio">Show Biography</button>
+              <br />
+              <br />
+              <h5>Tags:</h5>
+              <div v-for="tag in tags" :key="tag.id">
+                <p>{{ tag.name }}</p>
+              </div>
+              <h5>
+                <a :href="artists.url">Last FM Artist Page</a>
+              </h5>
+              <dialog id="bio-details">
+                <form method="dialog">
+                  <h3>Biography:</h3>
+                  <p>{{ bio }}</p>
+                  <a :href="wiki">{{ artists.name }} Wikepedia Page</a>
+                  <br />
+                  <br />
+                  <button>Close</button>
+                </form>
+              </dialog>
+              <hr />
+              <br />
+              <h4>Albums:</h4>
+              <br />
+              <div v-for="album in albums" :key="album.id">
+                <h5>
+                  <a :href="album.url">{{ album.name }}</a>
+                </h5>
+              </div>
+              <hr />
+              <h4>Similar Artists:</h4>
+              <div class="col-lg-12 col-md-12 col-sm-10">
+                <div class="row no-gutters justify-content-center match-height">
+                  <!-- Small Card -->
+                  <div v-for="similar in similars" :key="similar.id" class="col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="card hoverable small-card">
+                      <!--Card content-->
+                      <div class="card-block">
+                        <!--Title-->
+                        <h4 class="card-title">{{ similar.name }}</h4>
+                        <!--Text-->
+                        <br />
+                        <div class="filter-card-details">
+                          <button @click="artistInfo" v-on:click="artistSearch = similar.name">
+                            Add Artist to Search Bar
+                          </button>
+                          <br />
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-      <div v-for="similar in similars" :key="similar.id">
-        <h5>{{ similar.name }}</h5>
-        <button @click="artistInfo" v-on:click="artistSearch = similar.name">Click to add Artist to Search Bar</button>
+              <!-- <div v-for="similar in similars" :key="similar.id">
+                <h5>{{ similar.name }}</h5>
+                <button @click="artistInfo" v-on:click="artistSearch = similar.name">
+                  Click to add Artist to Search Bar
+                </button>
+              </div> -->
+              <hr />
+            </div>
+          </div>
+        </div>
       </div>
-      <hr />
-    </div>
+    </section>
   </div>
 </template>
 
-<style></style>
+<style>
+.artist-input {
+  width: 35%;
+}
+</style>
 
 <script>
 import axios from "axios";
