@@ -41,10 +41,11 @@
 
           <div class="col-lg-12 col-md-12">
             <h1 class="chart-title-header">Search by City:</h1>
-            <input type="text" v-model="citySearch" placeholder="enter city.." />
+            <input class="solid-input form artist-input" type="text" v-model="citySearch" placeholder="enter city.." />
             <br />
             <br />
             <h1 class="chart-title-header">Search by Genre:</h1>
+            <br />
             <select v-model="genreSearch">
               <option value="">--Select Genre--</option>
               <option value="KnvZfZ7vAvv">Alternative</option>
@@ -71,6 +72,7 @@
             </select>
             <br />
             <br />
+            <br />
             <button @click="indexEvents">Search</button>
             <hr />
             <ul>
@@ -89,6 +91,9 @@
             <div class="card hoverable">
               <div class="view overlay img-frame">
                 <img v-bind:src="event.images[1].url" v-bind:alt="event.name" />
+                <a v-on:click="showTicket(event)">
+                  <div class="img-mask"></div>
+                </a>
               </div>
               <!--Card content-->
               <div class="card-block">
@@ -114,9 +119,6 @@
                       {{ event.dates.start.localTime }}
                     </li>
                     <hr />
-                    <button v-on:click="showTicket(event)">Event / Ticket Info</button>
-                    <br />
-                    <br />
                     <li>
                       <button>
                         <a :href="event.url">Buy Tickets!</a>
@@ -192,7 +194,7 @@
                 <div class="card hoverable">
                   <div class="view overlay img-frame">
                     <img v-bind:src="randomTicket.images[0].url" v-bind:alt="randomTicket.name" />
-                    <a href="">
+                    <a v-on:click="showRandomTicket(randomTicket)">
                       <div class="img-mask"></div>
                     </a>
                   </div>
@@ -203,7 +205,8 @@
                     <!--Text-->
                     <br />
                     <h5 class="card-text">
-                      {{ randomTicket._embedded.venues[0].city.name }}
+                      {{ randomTicket._embedded.venues[0].city.name }},
+                      {{ randomTicket._embedded.venues[0].state.stateCode }}
                     </h5>
                     <h5 class="card-text">{{ randomTicket._embedded.venues[0].name }}</h5>
                     <div class="filter-card-details">
@@ -382,7 +385,7 @@ export default {
     randomTicket: function () {
       let apiKey = process.env.VUE_APP_TICKETMASTER_TOKEN;
       axios
-        .get(`discovery/v2/events.json?size=12&sort=random&classificationName=Music&apikey=${apiKey}`)
+        .get(`discovery/v2/events.json?size=12&sort=random&countryCode=US&classificationName=Music&apikey=${apiKey}`)
         .then((response) => {
           console.log("random events index", response);
           this.randomTickets = response.data._embedded.events;
@@ -395,6 +398,18 @@ export default {
     },
     showTicket: function (event) {
       this.currentTicket = event;
+      this.currentImage = this.currentTicket.images[0].url;
+      this.currentVenue = this.currentTicket._embedded.venues[0];
+      this.currentStart = this.currentTicket.dates.start.localDate;
+      this.currentTime = this.currentTicket.dates.start.localTime;
+      this.currentCity = this.currentTicket._embedded.venues[0].city.name;
+      this.currentStateCode = this.currentTicket._embedded.venues[0].state.stateCode;
+      this.currentAddress = this.currentTicket._embedded.venues[0].address.line1;
+      console.log("current ticket", this.currentTicket);
+      document.querySelector("#ticket-details").showModal();
+    },
+    showRandomTicket: function (randomTicket) {
+      this.currentTicket = randomTicket;
       this.currentImage = this.currentTicket.images[0].url;
       this.currentVenue = this.currentTicket._embedded.venues[0];
       this.currentStart = this.currentTicket.dates.start.localDate;

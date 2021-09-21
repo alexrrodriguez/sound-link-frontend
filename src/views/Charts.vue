@@ -10,7 +10,7 @@
                 <h1 class="chart-title">Top 50 Artist Chart</h1>
                 <hr />
                 <div class="row justify-content-center no-gutters match-height chart-list-container">
-                  <div class="col-12 col-sm-12 col-md-6 col-lg-8 event-rap event-anniversary event-romance">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-8 event-rap event-anniversary event-romance">
                     <div class="chart-list-container">
                       <ol class="chart-list">
                         <li v-for="artist in artists" :key="artist.id">
@@ -21,7 +21,8 @@
                             <p>{{ artist.playcount }}</p>
                             <h5>Listeners:</h5>
                             <p>{{ artist.listeners }}</p>
-                            <a class="more-info-artist" :href="artist.url">More Info</a>
+                            <button><a class="more-info-artist" :href="artist.url">More Info</a></button>
+
                             <hr />
                           </div>
                         </li>
@@ -42,7 +43,7 @@
                 <h1 class="chart-title">Top 50 Tracks Chart</h1>
                 <hr />
                 <div class="row justify-content-center match-height">
-                  <div class="col-12 col-sm-12 col-md-6 col-lg-8 event-card event-rap event-anniversary event-romance">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-8 event-card event-rap event-anniversary event-romance">
                     <div class="chart-list-container">
                       <ol class="chart-list">
                         <li v-for="track in tracks" :key="track.id">
@@ -54,7 +55,8 @@
                           <p>{{ track.playcount }}</p>
                           <h5>Listeners:</h5>
                           <p>{{ track.listeners }}</p>
-                          <a class="more-info-artist" :href="track.url">More Info</a>
+                          <button><a class="more-info-artist" :href="track.url">More Info</a></button>
+
                           <hr />
                         </li>
                       </ol>

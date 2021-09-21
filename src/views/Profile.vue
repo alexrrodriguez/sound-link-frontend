@@ -1,41 +1,108 @@
 <template>
   <div class="profile-page">
-    <div>
-      <h1>{{ user.name }}</h1>
-      <p>{{ user.email }}</p>
-      <img :src="user.image" :alt="user.name" />
-    </div>
-    <h1>{{ user.name }} Concert Schedule:</h1>
-    <hr />
-    <div v-for="concert in concerts" :key="concert.id">
-      <h2>{{ concert.name }}</h2>
-      <img v-bind:src="concert.image" v-bind:alt="concert.name" />
-      <h4>{{ concert.venue }}</h4>
-      <p>{{ concert.date }}</p>
-      <p>{{ concert.time }}</p>
-      <button v-on:click="showTicket(concert)">Event / Ticket Info</button>
-      <dialog type="button" id="ticket-details">
-        <form method="dialog">
-          <h2>{{ currentTicket.name }}</h2>
-          <img v-bind:src="currentTicket.image" />
-          <h4>{{ currentTicket.venue }}</h4>
-          <h4>{{ currentTicket.city }}</h4>
-          <p>{{ currentTicket.address }}</p>
-          <p>{{ currentTicket.date }}</p>
-          <p>{{ currentTicket.time }}</p>
-          <p>
-            <button><a :href="currentTicket.tickets">Ticket URL</a></button>
-          </p>
-          <button v-on:click="destroyUserConcert(currentTicket)">Remove Concert From Schedule</button>
-          <button>Back</button>
-        </form>
-      </dialog>
-      <hr />
-    </div>
+    <section class="section-bg filter-section events">
+      <div class="container">
+        <div class="row home-search-header">
+          <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
+            <h2>Profile</h2>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12 gallery-card profile-card">
+              <div class="card hoverable">
+                <div class="view overlay img-frame">
+                  <img :src="user.image" :alt="user.name" />
+                </div>
+                <div class="card-block">
+                  <h4 class="card-title">{{ user.name }}</h4>
+                  <p class="card-text">{{ user.email }}</p>
+                  <br />
+                </div>
+              </div>
+            </div>
+            <br />
+            <hr />
+            <h2>{{ user.name }} Concert Schedule:</h2>
+            <hr />
+            <div class="row justify-content-center no-gutters match-height">
+              <div
+                v-for="concert in concerts"
+                :key="concert.id"
+                class="col-12 col-sm-12 col-md-6 col-lg-4 event-card event-rap event-anniversary event-romance"
+              >
+                <!--Card-->
+                <div class="card hoverable">
+                  <div class="view overlay img-frame">
+                    <img v-bind:src="concert.image" v-bind:alt="concert.name" />
+                    <a v-on:click="showTicket(concert)">
+                      <div class="img-mask"></div>
+                    </a>
+                  </div>
+                  <!--Card content-->
+                  <div class="card-block">
+                    <!--Title-->
+                    <h4 class="card-title">{{ concert.name }}</h4>
+                    <!--Text-->
+                    <h1>
+                      {{ concert.city }}
+                    </h1>
+                    <h1>
+                      {{ concert.venue }}
+                    </h1>
+                    <div class="filter-card-details">
+                      <ul>
+                        <li>
+                          <i class="fa fa-map-marker" aria-hidden="true"></i>
+                          {{ concert.address }},
+                        </li>
+                        <li>
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          {{ concert.date }}
+                        </li>
+                        <li>
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>
+                          {{ concert.time }}
+                        </li>
+                      </ul>
+                    </div>
+                    <button v-on:click="showTicket(concert)">Event / Ticket Info</button>
+                    <br />
+                    <br />
+                  </div>
+                  <!--/.Card content-->
+                </div>
+                <!--/.Card-->
+              </div>
+            </div>
+            <dialog type="button" id="ticket-details">
+              <form method="dialog">
+                <h2>{{ currentTicket.name }}</h2>
+                <img v-bind:src="currentTicket.image" />
+                <h4>{{ currentTicket.venue }}</h4>
+                <h4>{{ currentTicket.city }}</h4>
+                <p>{{ currentTicket.address }}</p>
+                <p>{{ currentTicket.date }}</p>
+                <p>{{ currentTicket.time }}</p>
+                <p>
+                  <button><a :href="currentTicket.tickets">Ticket URL</a></button>
+                </p>
+                <hr />
+                <button v-on:click="destroyUserConcert(currentTicket)">Remove Concert From Schedule</button>
+                <br />
+                <br />
+                <button>Back</button>
+              </form>
+            </dialog>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
-<style></style>
+<style>
+.profile-card {
+  margin: 0 auto;
+  float: none;
+}
+</style>
 
 <script>
 import axios from "axios";
