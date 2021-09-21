@@ -79,13 +79,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- <div v-for="similar in similars" :key="similar.id">
-                <h5>{{ similar.name }}</h5>
-                <button @click="artistInfo" v-on:click="artistSearch = similar.name">
-                  Click to add Artist to Search Bar
-                </button>
-              </div> -->
               <hr />
             </div>
           </div>

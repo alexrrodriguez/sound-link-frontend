@@ -89,21 +89,21 @@
             <div class="card hoverable">
               <div class="view overlay img-frame">
                 <img v-bind:src="event.images[1].url" v-bind:alt="event.name" />
-                <a href="">
-                  <div class="img-mask"></div>
-                </a>
               </div>
               <!--Card content-->
               <div class="card-block">
                 <!--Title-->
                 <h4 class="card-title">{{ event.name }}</h4>
                 <!--Text-->
-                <p class="card-text">{{ event._embedded.venues[0].name }}</p>
+                <br />
+                <h5 class="card-text">{{ event._embedded.venues[0].name }}</h5>
+                <h5 class="card-text">
+                  {{ event._embedded.venues[0].city.name }}, {{ event._embedded.venues[0].state.name }}
+                </h5>
                 <div class="filter-card-details">
                   <ul>
                     <li>
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>
-                      {{ event._embedded.venues[0].city.name }}, {{ event._embedded.venues[0].state.name }}
+                      <i class="fa fa-map-marker" aria-hidden="true">{{ event._embedded.venues[0].address.line1 }}</i>
                     </li>
                     <li>
                       <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -129,36 +129,34 @@
             </div>
             <!--/.Card-->
           </div>
-
-          <dialog type="button" id="ticket-details">
-            <form method="dialog">
-              <h3>{{ currentTicket.name }}</h3>
-              <img v-bind:src="currentImage" />
-              <h4>Venue:</h4>
-              <p>{{ currentVenue.name }}</p>
-              <h4>City:</h4>
-              <p>{{ currentCity }}, {{ currentStateCode }}</p>
-              <h4>Adress:</h4>
-              <p>{{ currentAddress }}</p>
-              <h4>Date:</h4>
-              <p>{{ currentStart }}</p>
-              <h4>Time:</h4>
-              <p>{{ currentTime }}</p>
-              <h4>Tickets:</h4>
-              <p>
-                <button><a :href="currentTicket.url">Buy Tickets!</a></button>
-              </p>
-              <hr />
-              <button @click="addConcert">Add Concert To Your Schedule!</button>
-              <br />
-              <br />
-              <button>Back</button>
-            </form>
-          </dialog>
         </div>
         <hr />
         <br />
-
+        <dialog type="button" id="ticket-details">
+          <form method="dialog">
+            <h3>{{ currentTicket.name }}</h3>
+            <img v-bind:src="currentImage" />
+            <h4>Venue:</h4>
+            <p>{{ currentVenue.name }}</p>
+            <h4>City:</h4>
+            <p>{{ currentCity }}, {{ currentStateCode }}</p>
+            <h4>Adress:</h4>
+            <p>{{ currentAddress }}</p>
+            <h4>Date:</h4>
+            <p>{{ currentStart }}</p>
+            <h4>Time:</h4>
+            <p>{{ currentTime }}</p>
+            <h4>Tickets:</h4>
+            <p>
+              <button><a :href="currentTicket.url">Buy Tickets!</a></button>
+            </p>
+            <hr />
+            <button @click="addConcert">Add Concert To Your Schedule!</button>
+            <br />
+            <br />
+            <button>Back</button>
+          </form>
+        </dialog>
         <div class="row home-search-header">
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
             <h2>Upcoming Events</h2>
@@ -203,27 +201,28 @@
                     <!--Title-->
                     <h4 class="card-title">{{ randomTicket.name }}</h4>
                     <!--Text-->
-                    <p class="card-text">{{ randomTicket._embedded.venues[0].name }}</p>
+                    <br />
+                    <h5 class="card-text">
+                      {{ randomTicket._embedded.venues[0].city.name }}
+                    </h5>
+                    <h5 class="card-text">{{ randomTicket._embedded.venues[0].name }}</h5>
                     <div class="filter-card-details">
                       <ul>
                         <li>
-                          <i class="fa fa-map-marker" aria-hidden="true"></i>
+                          <i class="fa fa-map-marker" aria-hidden="true">
+                            {{ randomTicket._embedded.venues[0].address.line1 }}
+                          </i>
                         </li>
                         <li>
-                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <i class="fa fa-calendar" aria-hidden="true">: {{ randomTicket.dates.start.localDate }}</i>
                         </li>
                         <li>
-                          <i class="fa fa-clock-o" aria-hidden="true"></i>
+                          <i class="fa fa-clock-o" aria-hidden="true">: {{ randomTicket.dates.start.localDate }}</i>
                         </li>
                         <hr />
-                        <button v-on:click="showTicket(event)">Event / Ticket Info</button>
-                        <br />
-                        <br />
-                        <li>
-                          <button>
-                            <!-- <a :href="">Buy Tickets!</a> -->
-                          </button>
-                        </li>
+                        <button>
+                          <a :href="randomTicket.url">Buy Tickets!</a>
+                        </button>
                       </ul>
                     </div>
                   </div>
