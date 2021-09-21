@@ -73,21 +73,53 @@
             </div>
             <dialog type="button" id="ticket-details">
               <form method="dialog">
-                <h2>{{ currentTicket.name }}</h2>
-                <img v-bind:src="currentTicket.image" />
-                <h4>{{ currentTicket.venue }}</h4>
-                <h4>{{ currentTicket.city }}</h4>
-                <p>{{ currentTicket.address }}</p>
-                <p>{{ currentTicket.date }}</p>
-                <p>{{ currentTicket.time }}</p>
-                <p>
-                  <button><a :href="currentTicket.tickets">Ticket URL</a></button>
-                </p>
-                <hr />
-                <button v-on:click="destroyUserConcert(currentTicket)">Remove Concert From Schedule</button>
-                <br />
-                <br />
-                <button>Back</button>
+                <!-- Large card -->
+                <div class="col-xl-12 col-md-12 col-large-card hidden-md-down">
+                  <div class="card hoverable large-card">
+                    <div class="view overlay img-frame">
+                      <img v-bind:src="currentTicket.image" />
+                    </div>
+                    <!--Card content-->
+                    <div class="card-block">
+                      <!--Title-->
+                      <h4 class="card-title">{{ currentTicket.name }}</h4>
+                      <!--Text-->
+                      <br />
+                      <h1>{{ currentTicket.city }}</h1>
+                      <h1>
+                        {{ currentTicket.venue }}
+                      </h1>
+                      <div class="filter-card-details">
+                        <ul>
+                          <li>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            {{ currentTicket.address }}
+                          </li>
+                          <li>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            {{ currentTicket.date }}
+                          </li>
+                          <li>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            {{ currentTicket.time }}
+                          </li>
+                        </ul>
+                      </div>
+                      <p>
+                        <button><a :href="currentTicket.tickets">Buy Tickets!</a></button>
+                      </p>
+                      <hr />
+                      <button v-on:click="destroyUserConcert(currentTicket)">Remove Concert From Schedule</button>
+                      <br />
+                      <br />
+                      <button>Back</button>
+                      <br />
+                      <br />
+                    </div>
+                  </div>
+                  <!--/.Card large-->
+                </div>
+                <!--/.col large-->
               </form>
             </dialog>
           </div>

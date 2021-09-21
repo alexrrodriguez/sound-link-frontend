@@ -136,27 +136,53 @@
         <br />
         <dialog type="button" id="ticket-details">
           <form method="dialog">
-            <h3>{{ currentTicket.name }}</h3>
-            <img v-bind:src="currentImage" />
-            <h4>Venue:</h4>
-            <p>{{ currentVenue.name }}</p>
-            <h4>City:</h4>
-            <p>{{ currentCity }}, {{ currentStateCode }}</p>
-            <h4>Adress:</h4>
-            <p>{{ currentAddress }}</p>
-            <h4>Date:</h4>
-            <p>{{ currentStart }}</p>
-            <h4>Time:</h4>
-            <p>{{ currentTime }}</p>
-            <h4>Tickets:</h4>
-            <p>
-              <button><a :href="currentTicket.url">Buy Tickets!</a></button>
-            </p>
-            <hr />
-            <button @click="addConcert">Add Concert To Your Schedule!</button>
-            <br />
-            <br />
-            <button>Back</button>
+            <!-- Large card -->
+            <div class="col-xl-12 col-md-12 col-large-card hidden-md-down">
+              <div class="card hoverable large-card">
+                <div class="view overlay img-frame">
+                  <img v-bind:src="currentImage" />
+                </div>
+                <!--Card content-->
+                <div class="card-block">
+                  <!--Title-->
+                  <h4 class="card-title">{{ currentTicket.name }}</h4>
+                  <!--Text-->
+                  <br />
+                  <p class="card-text">{{ currentCity }}, {{ currentStateCode }}</p>
+                  <p class="card-text">
+                    {{ currentVenue.name }}
+                  </p>
+                  <div class="filter-card-details">
+                    <ul>
+                      <li>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        {{ currentAddress }}
+                      </li>
+                      <li>
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        {{ currentStart }}
+                      </li>
+                      <li>
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        {{ currentTime }}
+                      </li>
+                    </ul>
+                  </div>
+                  <p>
+                    <button><a :href="currentTicket.url">Buy Tickets!</a></button>
+                  </p>
+                  <hr />
+                  <button @click="addConcert">Add Concert To Your Schedule!</button>
+                  <br />
+                  <br />
+                  <button>Back</button>
+                  <br />
+                  <br />
+                </div>
+              </div>
+              <!--/.Card large-->
+            </div>
+            <!--/.col large-->
           </form>
         </dialog>
         <div class="row home-search-header">
