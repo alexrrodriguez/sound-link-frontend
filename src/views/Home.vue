@@ -33,6 +33,7 @@
     <!-- Item Filter section -->
     <section class="section-bg filter-section events">
       <div class="container">
+        <br />
         <div class="row home-search-header">
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
             <h2>Search For Events</h2>
@@ -72,6 +73,9 @@
             <br />
             <button @click="indexEvents">Search</button>
             <hr />
+            <ul>
+              <li v-for="error in errors" :key="error">{{ error }}</li>
+            </ul>
           </div>
         </div>
 
@@ -125,6 +129,7 @@
             </div>
             <!--/.Card-->
           </div>
+
           <dialog type="button" id="ticket-details">
             <form method="dialog">
               <h3>{{ currentTicket.name }}</h3>
@@ -151,9 +156,14 @@
             </form>
           </dialog>
         </div>
+        <hr />
+        <br />
 
-        <!--/.Row-->
-
+        <div class="row home-search-header">
+          <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
+            <h2>Upcoming Events</h2>
+          </div>
+        </div>
         <!-- No Content available -->
         <div class="row grid-no-data">
           <div class="col-md-12 text-center">
@@ -170,6 +180,60 @@
             </a>
           </div>
         </div>
+        <section class="section-bg filter-section events">
+          <div class="container">
+            <!-- Content row starts -->
+
+            <div class="row no-gutters justify-content-center match-height">
+              <div
+                class="col-12 col-sm-12 col-md-6 col-lg-4 event-card event-rap event-anniversary event-romance"
+                v-for="randomTicket in randomTickets"
+                :key="randomTicket.id"
+              >
+                <!--Card-->
+                <div class="card hoverable">
+                  <div class="view overlay img-frame">
+                    <img v-bind:src="randomTicket.images[0].url" v-bind:alt="randomTicket.name" />
+                    <a href="">
+                      <div class="img-mask"></div>
+                    </a>
+                  </div>
+                  <!--Card content-->
+                  <div class="card-block">
+                    <!--Title-->
+                    <h4 class="card-title">{{ randomTicket.name }}</h4>
+                    <!--Text-->
+                    <p class="card-text">{{ randomTicket._embedded.venues[0].name }}</p>
+                    <div class="filter-card-details">
+                      <ul>
+                        <li>
+                          <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </li>
+                        <hr />
+                        <button v-on:click="showTicket(event)">Event / Ticket Info</button>
+                        <br />
+                        <br />
+                        <li>
+                          <button>
+                            <!-- <a :href="">Buy Tickets!</a> -->
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!--/.Card content-->
+                </div>
+                <!--/.Card-->
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
       <!--/.container-->
     </section>
@@ -289,7 +353,11 @@ export default {
       citySearch: "",
       genreSearch: "",
       newUserConcert: {},
+      randomTickets: [],
     };
+  },
+  created: function () {
+    this.randomTicket();
   },
   methods: {
     indexEvents: function () {
@@ -310,6 +378,20 @@ export default {
           this.errors = ["No Search Results Available.."];
           this.citySearch = "";
           this.genreSearch = "";
+        });
+    },
+    randomTicket: function () {
+      let apiKey = process.env.VUE_APP_TICKETMASTER_TOKEN;
+      axios
+        .get(`discovery/v2/events.json?size=9&sort=random&classificationName=Music&apikey=${apiKey}`)
+        .then((response) => {
+          console.log("random events index", response);
+          this.randomTickets = response.data._embedded.events;
+          console.log(this.randomTickets);
+        })
+        .catch((error) => {
+          console.log(error.response);
+          this.errors = ["No Search Results Available.."];
         });
     },
     showTicket: function (event) {
