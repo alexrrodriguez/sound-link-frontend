@@ -1,6 +1,14 @@
 <template>
   <div class="charts">
-    <h1 class="chart-title-header">{{ message }}</h1>
+    <section class="section-bg filter-section events">
+      <div class="container">
+        <div class="row home-search-header">
+          <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
+            <h2 class="chart-title-header">{{ message }}</h2>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="chart-wrapper">
       <div class="artist-chart">
         <section class="section-bg filter-section events">
@@ -15,7 +23,7 @@
                       <ol class="chart-list">
                         <li v-for="artist in artists" :key="artist.id">
                           <div>
-                            <h2>{{ artist.name }}</h2>
+                            <h2 class="chart-name">{{ artist.name }}</h2>
 
                             <h5>Playcount:</h5>
                             <p>{{ artist.playcount }}</p>
@@ -47,7 +55,7 @@
                     <div class="chart-list-container">
                       <ol class="chart-list">
                         <li v-for="track in tracks" :key="track.id">
-                          <h2 class="track-title">{{ track.name }}</h2>
+                          <h2 class="chart-name">{{ track.name }}</h2>
                           <h1>By</h1>
                           <h4 class="artist-name-track">{{ track.artist.name }}</h4>
                           <br />
@@ -73,6 +81,9 @@
 </template>
 
 <style>
+.chart-name {
+  font-size: 3rem !important;
+}
 .chart-list-container {
   overflow: auto;
 }
@@ -85,7 +96,7 @@
 }
 .chart-title {
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 3.5rem;
 }
 .chart-wrapper {
   position: relative;
