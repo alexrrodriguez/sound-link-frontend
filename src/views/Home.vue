@@ -29,15 +29,15 @@
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
             <h2>Search For Events</h2>
           </div>
-
           <div class="col-lg-12 col-md-12">
+            <br />
             <h1 class="chart-title-header">Search by City:</h1>
             <input class="solid-input form artist-input" type="text" v-model="citySearch" placeholder="enter city.." />
             <br />
             <br />
             <h1 class="chart-title-header">Search by Genre:</h1>
             <br />
-            <select v-model="genreSearch">
+            <select class="select-option" v-model="genreSearch">
               <option value="">--Select Genre--</option>
               <option value="KnvZfZ7vAvv">Alternative</option>
               <option value="KnvZfZ7vAve">Ballads/Romantic</option>
@@ -64,7 +64,9 @@
             <br />
             <br />
             <br />
-            <button @click="indexEvents">Search</button>
+            <button class="btn btn-primary ripple" @click="indexEvents">Search</button>
+            <br />
+            <br />
             <hr />
             <ul>
               <li v-for="error in errors" :key="error">{{ error }}</li>
@@ -110,13 +112,12 @@
                       {{ event.dates.start.localTime }}
                     </li>
                     <hr />
-                    <li>
-                      <button>
-                        <a :href="event.url">Buy Tickets!</a>
-                      </button>
-                    </li>
                   </ul>
                 </div>
+                <h1 class="event-info-text">Click for Event / Ticket Info</h1>
+                <!-- <button v-on:click="showTicket(event)">Event / Ticket Info</button> -->
+                <br />
+                <br />
               </div>
               <!--/.Card content-->
             </div>
@@ -128,7 +129,7 @@
         <dialog type="button" id="ticket-details">
           <form method="dialog">
             <!-- Large card -->
-            <div class="col-xl-12 col-md-12 col-large-card hidden-md-down">
+            <div class="col-xl-12 col-md-12 col-large-card">
               <div class="card hoverable large-card">
                 <div class="view overlay img-frame">
                   <img v-bind:src="currentImage" />
@@ -160,10 +161,10 @@
                     </ul>
                   </div>
                   <p>
-                    <button><a :href="currentTicket.url">Buy Tickets!</a></button>
+                    <button class="btn btn-primary ripple"><a :href="currentTicket.url">Buy Tickets!</a></button>
                   </p>
                   <hr />
-                  <button @click="addConcert">Add Concert To Your Schedule!</button>
+                  <button class="btn btn-success ripple" @click="addConcert">Add Concert To Your Schedule!</button>
                   <br />
                   <br />
                   <button>Back</button>
@@ -240,11 +241,11 @@
                           <i class="fa fa-clock-o" aria-hidden="true">: {{ randomTicket.dates.start.localDate }}</i>
                         </li>
                         <hr />
-                        <button>
-                          <a :href="randomTicket.url">Buy Tickets!</a>
-                        </button>
                       </ul>
                     </div>
+                    <h1 class="event-info-text">Click for Event / Ticket Info</h1>
+                    <!-- <button v-on:click="showRandomTicket(randomTicket)">Event / Ticket Info</button> -->
+                    <br />
                   </div>
                   <!--/.Card content-->
                 </div>
@@ -260,6 +261,18 @@
 </template>
 
 <style>
+.event-info-text {
+  text-align: center;
+}
+.ticket-button {
+  color: black;
+}
+.select-option {
+  background-color: white;
+  width: 40%;
+  height: 7%;
+  text-align: center;
+}
 .upcoming-events {
   color: #fff;
 }

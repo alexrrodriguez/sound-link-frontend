@@ -14,7 +14,7 @@
             />
             <br />
             <br />
-            <button @click="artistInfo">Search!</button>
+            <button class="btn btn-primary ripple" @click="artistInfo">Search!</button>
             <br />
             <br />
             <hr />
@@ -25,14 +25,17 @@
               <br />
               <h2 class="artist-name-title">{{ artists.name }}</h2>
               <p>{{ summary }}</p>
-              <button v-on:click="showBio">Show Biography</button>
+              <button class="btn btn-success ripple" v-on:click="showBio">Show Biography</button>
               <br />
               <br />
               <hr />
+              <br />
               <h5 class="tag-title">Tags:</h5>
+              <br />
               <div v-for="tag in tags" :key="tag.id">
                 <p>{{ tag.name }}</p>
               </div>
+              <br />
               <hr />
               <h5>
                 <a :href="artists.url">Last FM Artist Page</a>
@@ -44,7 +47,7 @@
                   <a :href="wiki">{{ artists.name }} Wikepedia Page</a>
                   <br />
                   <br />
-                  <button>Close</button>
+                  <button class="btn btn-primary ripple">Close</button>
                 </form>
               </dialog>
               <hr />
@@ -69,7 +72,11 @@
                         <!--Text-->
                         <br />
                         <div class="filter-card-details">
-                          <button @click="artistInfo" v-on:click="artistSearch = similar.name">
+                          <button
+                            class="btn btn-success ripple"
+                            @click="artistInfo"
+                            v-on:click="artistSearch = similar.name"
+                          >
                             Add Artist to Search Bar
                           </button>
                           <br />
@@ -95,7 +102,7 @@
   font-size: 1.5rem;
 }
 .artist-input {
-  width: 35%;
+  width: 45%;
 }
 .artist-name-title {
   font-weight: bold;

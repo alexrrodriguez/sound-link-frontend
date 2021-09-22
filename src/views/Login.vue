@@ -30,7 +30,7 @@
                 />
               </div>
               <br />
-              <input type="submit" value="Submit" />
+              <input class="btn btn-primary ripple" type="submit" value="Submit" />
             </form>
             <br />
           </div>

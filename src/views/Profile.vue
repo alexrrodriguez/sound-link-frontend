@@ -40,12 +40,10 @@
                     <!--Title-->
                     <h4 class="card-title">{{ concert.name }}</h4>
                     <!--Text-->
-                    <h1>
-                      {{ concert.city }}
-                    </h1>
-                    <h1>
+                    <h5 class="card-text">{{ concert.city }}</h5>
+                    <h5 class="card-text">
                       {{ concert.venue }}
-                    </h1>
+                    </h5>
                     <div class="filter-card-details">
                       <ul>
                         <li>
@@ -62,8 +60,8 @@
                         </li>
                       </ul>
                     </div>
-                    <button v-on:click="showTicket(concert)">Event / Ticket Info</button>
-                    <br />
+                    <hr />
+                    <h1 class="event-info-text">Click for Event / Ticket Info</h1>
                     <br />
                   </div>
                   <!--/.Card content-->
@@ -106,10 +104,14 @@
                         </ul>
                       </div>
                       <p>
-                        <button><a :href="currentTicket.tickets">Buy Tickets!</a></button>
+                        <button class="btn btn-primary ripple">
+                          <a :href="currentTicket.tickets">Buy Tickets!</a>
+                        </button>
                       </p>
                       <hr />
-                      <button v-on:click="destroyUserConcert(currentTicket)">Remove Concert From Schedule</button>
+                      <button class="btn btn-danger ripple" v-on:click="destroyUserConcert(currentTicket)">
+                        Remove Concert From Schedule
+                      </button>
                       <br />
                       <br />
                       <button>Back</button>
