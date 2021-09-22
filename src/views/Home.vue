@@ -15,8 +15,8 @@
           <div class="col-md-5 text-left">
             <h1 class="headline-right">Discover Your Sound</h1>
           </div>
-          <div class="col-md-12 text-center hidden-sm-down">
-            <a class="btn btn-rounded ripple" id="discover" href="/signup">Sign up</a>
+          <div class="col-md-12 text-center">
+            <a class="btn btn-rounded ripple" href="/signup">Sign up</a>
           </div>
         </div>
       </div>
@@ -164,7 +164,7 @@
                     <button class="btn btn-primary ripple"><a :href="currentTicket.url">Buy Tickets!</a></button>
                   </p>
                   <hr />
-                  <button class="btn btn-success ripple" @click="addConcert">Add Concert To Your Schedule!</button>
+                  <button class="btn btn-success ripple" @click="addConcert">Add Event To Your Schedule!</button>
                   <br />
                   <small>
                     <ul>
