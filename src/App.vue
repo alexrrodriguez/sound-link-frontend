@@ -99,12 +99,10 @@
           <div class="col-lg-6 general-info-block hidden-sm-down">
             <h2>Sound Link</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet sem id erat commodo vulputate.
-              Sed a commodo quam. Curabitur id ante vel elit pellentesque eleifend vitae vel risus. Pellentesque tempus
-              ex sit amet nisl rutrum placerat. Sed vel mattis sem. Sed vel accumsan magna. Duis enim sapien, cursus ac
-              enim sed, cursus consectetur lorem. Integer egestas vulputate turpis, rhoncus ornare orci rhoncus eget.
-              Sed lobortis sem eget accumsan imperdiet. Vivamus aliquam quis urna in laoreet. Nunc rhoncus eleifend
-              diam, porttitor interdum elit commodo dictum
+              Sound Link is Website that allows users to search for music events by location and genre. Users are able
+              to sign in and add music events to their schedule on their profile page. Sound Link has Weekly Top Charts
+              for artists and tracks. Users can also find more information about their favorite artists by searching on
+              the artists page. Sign up now and start searching for music events to add to your schedule!
             </p>
           </div>
 
