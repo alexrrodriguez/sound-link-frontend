@@ -15,7 +15,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
-                <h1 class="chart-title">Top 50 Artist Chart</h1>
+                <h2 class="chart-title">Top 50 Artist Chart</h2>
                 <hr />
                 <div class="row justify-content-center no-gutters match-height chart-list-container">
                   <div class="col-12 col-sm-12 col-md-12 col-lg-8 event-rap event-anniversary event-romance">
@@ -29,7 +29,7 @@
                             <p>{{ artist.playcount }}</p>
                             <h5>Listeners:</h5>
                             <p>{{ artist.listeners }}</p>
-                            <button><a class="more-info-artist" :href="artist.url">More Info</a></button>
+                            <button class="btn btn-primary ripple"><a :href="artist.url">More Info</a></button>
 
                             <hr />
                           </div>
@@ -48,7 +48,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
-                <h1 class="chart-title">Top 50 Tracks Chart</h1>
+                <h2 class="chart-title">Top 50 Tracks Chart</h2>
                 <hr />
                 <div class="row justify-content-center match-height">
                   <div class="col-12 col-sm-12 col-md-12 col-lg-8 event-card event-rap event-anniversary event-romance">
@@ -63,7 +63,7 @@
                           <p>{{ track.playcount }}</p>
                           <h5>Listeners:</h5>
                           <p>{{ track.listeners }}</p>
-                          <button><a class="more-info-artist" :href="track.url">More Info</a></button>
+                          <button class="btn btn-primary ripple"><a :href="track.url">More Info</a></button>
 
                           <hr />
                         </li>
@@ -103,14 +103,12 @@
 }
 .artist-chart {
   margin: 1%;
-  border: 1px solid black;
   text-align: center;
   display: inline-block;
   width: 48%;
 }
 .track-chart {
   margin: 1%;
-  border: 1px solid black;
   text-align: center;
   display: inline-block;
   width: 48%;

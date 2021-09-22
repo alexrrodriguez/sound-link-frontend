@@ -69,7 +69,7 @@
             <br />
             <hr />
             <ul>
-              <li v-for="error in errors" :key="error">{{ error }}</li>
+              <li class="error-text" v-for="error in errors" :key="error">{{ error }}</li>
             </ul>
           </div>
         </div>
@@ -167,6 +167,11 @@
                   <button class="btn btn-success ripple" @click="addConcert">Add Concert To Your Schedule!</button>
                   <br />
                   <br />
+                  <small>
+                    <ul>
+                      <li class="error-text" v-for="addError in addErrors" v-bind:key="addError">{{ addError }}</li>
+                    </ul>
+                  </small>
                   <button>Back</button>
                   <br />
                   <br />
@@ -244,7 +249,6 @@
                       </ul>
                     </div>
                     <h1 class="event-info-text">Click for Event / Ticket Info</h1>
-                    <!-- <button v-on:click="showRandomTicket(randomTicket)">Event / Ticket Info</button> -->
                     <br />
                   </div>
                   <!--/.Card content-->
@@ -261,6 +265,9 @@
 </template>
 
 <style>
+.error-text {
+  color: red;
+}
 .event-info-text {
   text-align: center;
 }
@@ -288,6 +295,7 @@ export default {
   data: function () {
     return {
       errors: [],
+      addErrors: [],
       events: [],
       currentTicket: {},
       currentVenue: [],
@@ -405,7 +413,7 @@ export default {
         })
         .catch((error) => {
           console.log("user concert create errror", error.response);
-          this.errors = error.response.data.errors;
+          this.addErrors = ["Sign In To Add Concerts To Your Schedule.."];
         });
     },
   },
