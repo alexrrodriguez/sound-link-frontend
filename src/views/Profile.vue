@@ -72,7 +72,7 @@
             <dialog type="button" id="ticket-details">
               <form method="dialog">
                 <!-- Large card -->
-                <div class="col-xl-12 col-md-12 col-large-card hidden-md-down">
+                <div class="col-xl-12 col-md-12 col-large-card">
                   <div class="card hoverable large-card">
                     <div class="view overlay img-frame">
                       <img v-bind:src="currentTicket.image" />
@@ -82,7 +82,6 @@
                       <!--Title-->
                       <h4 class="card-title">{{ currentTicket.name }}</h4>
                       <!--Text-->
-                      <br />
                       <h1>{{ currentTicket.city }}</h1>
                       <h1>
                         {{ currentTicket.venue }}
@@ -114,7 +113,7 @@
                       </button>
                       <br />
                       <br />
-                      <button>Back</button>
+                      <button class="btn btn-warning ripple">Back</button>
                       <br />
                       <br />
                     </div>

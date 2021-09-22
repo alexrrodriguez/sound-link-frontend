@@ -140,10 +140,10 @@
                   <h4 class="card-title">{{ currentTicket.name }}</h4>
                   <!--Text-->
                   <br />
-                  <p class="card-text">{{ currentCity }}, {{ currentStateCode }}</p>
-                  <p class="card-text">
+                  <h1>{{ currentCity }}, {{ currentStateCode }}</h1>
+                  <h1>
                     {{ currentVenue.name }}
-                  </p>
+                  </h1>
                   <div class="filter-card-details">
                     <ul>
                       <li>
@@ -166,13 +166,12 @@
                   <hr />
                   <button class="btn btn-success ripple" @click="addConcert">Add Concert To Your Schedule!</button>
                   <br />
-                  <br />
                   <small>
                     <ul>
                       <li class="error-text" v-for="addError in addErrors" v-bind:key="addError">{{ addError }}</li>
                     </ul>
                   </small>
-                  <button>Back</button>
+                  <button class="btn btn-warning ripple">Back</button>
                   <br />
                   <br />
                 </div>
