@@ -1,32 +1,46 @@
 <template>
   <div class="signup">
-    <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="newUserParams.name" />
+    <section class="section-bg filter-section events">
+      <div class="container">
+        <div class="row home-search-header">
+          <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
+            <form v-on:submit.prevent="submit()">
+              <h2>Signup</h2>
+              <br />
+              <ul>
+                <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+              </ul>
+              <h1>Name:</h1>
+              <div>
+                <input class="solid-input form artist-input" type="text" v-model="newUserParams.name" />
+              </div>
+              <h1>Email:</h1>
+              <div>
+                <input class="solid-input form artist-input" type="email" v-model="newUserParams.email" />
+              </div>
+              <h1>Image URL:</h1>
+              <div>
+                <input class="solid-input form artist-input" type="text" v-model="newUserParams.image" />
+              </div>
+              <h1>Password:</h1>
+              <div>
+                <input class="solid-input form artist-input" type="password" v-model="newUserParams.password" />
+              </div>
+              <h1>Password confirmation:</h1>
+              <div>
+                <input
+                  class="solid-input form artist-input"
+                  type="password"
+                  v-model="newUserParams.password_confirmation"
+                />
+              </div>
+              <br />
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+        </div>
       </div>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newUserParams.email" />
-      </div>
-      <div>
-        <label>Image URL:</label>
-        <input type="text" v-model="newUserParams.image" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newUserParams.password" />
-      </div>
-      <div>
-        <label>Password confirmation:</label>
-        <input type="password" v-model="newUserParams.password_confirmation" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
+    </section>
   </div>
 </template>
 
