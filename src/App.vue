@@ -18,7 +18,6 @@
       <!-- Musicians LOGO -->
       <a class="navbar-brand logo ripple" href="/">
         <h1 class="sound-link-header">Sound Link</h1>
-        <!-- <img src="img/logo.svg" alt="Musicians -- Premium HTML template" /> -->
       </a>
 
       <!-- Menu -->
@@ -56,17 +55,17 @@
         <!-- Social menu -->
         <ul class="navbar-nav social-nav">
           <li class="nav-item">
-            <a class="nav-link ripple" href="#">
+            <a class="nav-link ripple" href="https://www.facebook.com">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link ripple" href="#">
+            <a class="nav-link ripple" href="https://www.twitter.com">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link ripple" href="#">
+            <a class="nav-link ripple" href="https://www.instagram.com">
               <i class="fa fa-instagram"></i>
             </a>
           </li>
@@ -128,13 +127,13 @@
             <h4>Follow us on social media</h4>
             <ul class="social-media">
               <li>
-                <a class="ripple" href="#"><i class="fa fa-facebook"></i></a>
+                <a class="ripple" href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
               </li>
               <li>
-                <a class="ripple" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="ripple" href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
               </li>
               <li>
-                <a class="ripple" href="#"><i class="fa fa-instagram"></i></a>
+                <a class="ripple" href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
               </li>
             </ul>
           </div>
