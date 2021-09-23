@@ -322,7 +322,7 @@ export default {
 
       axios
         .get(
-          `discovery/v2/events.json?size=48&city=${this.citySearch}&genreId=${this.genreSearch}&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=${apiKey}`
+          `https://app.ticketmaster.com/discovery/v2/events.json?size=48&city=${this.citySearch}&genreId=${this.genreSearch}&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=${apiKey}`
         )
         .then((response) => {
           console.log("events index", response);
@@ -339,7 +339,9 @@ export default {
     randomTicket: function () {
       let apiKey = process.env.VUE_APP_TICKETMASTER_TOKEN;
       axios
-        .get(`discovery/v2/events.json?size=12&sort=random&countryCode=US&classificationName=Music&apikey=${apiKey}`)
+        .get(
+          `https://app.ticketmaster.com/discovery/v2/events.json?size=12&sort=random&countryCode=US&classificationName=Music&apikey=${apiKey}`
+        )
         .then((response) => {
           console.log("random events index", response);
           this.randomTickets = response.data._embedded.events;
@@ -353,7 +355,9 @@ export default {
     randomTicketAll: function () {
       let apiKey = process.env.VUE_APP_TICKETMASTER_TOKEN;
       axios
-        .get(`discovery/v2/events.json?size=100&sort=random&countryCode=US&classificationName=Music&apikey=${apiKey}`)
+        .get(
+          `https://app.ticketmaster.com/discovery/v2/events.json?size=100&sort=random&countryCode=US&classificationName=Music&apikey=${apiKey}`
+        )
         .then((response) => {
           console.log("random events all index", response);
           this.randomTickets = response.data._embedded.events;
