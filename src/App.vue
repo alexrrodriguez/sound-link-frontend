@@ -72,24 +72,6 @@
         </ul>
       </div>
     </nav>
-
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/charts">Top 50 Charts</router-link>
-      |
-      <router-link to="/artists">Search Artists</router-link>
-      |
-      <router-link to="/profile" v-if="isLoggedIn()">Profile Page</router-link>
-      |
-      <router-link to="/about">About</router-link>
-      |
-      <router-link to="/login" v-if="!isLoggedIn()">Login</router-link>
-      |
-      <router-link to="/logout" v-if="isLoggedIn()">Logout</router-link>
-      |
-      <router-link to="/signup" v-if="!isLoggedIn()">Signup</router-link>
-    </div> -->
     <router-view />
     <!-- General info section -->
     <section class="general-info">
