@@ -19,6 +19,7 @@
                   v-model="newSessionParams.email"
                 />
               </div>
+              <small>Login as Tom with email: "tom@example.com" and password: "password" to demo app!</small>
               <br />
               <h1>Password:</h1>
               <div>

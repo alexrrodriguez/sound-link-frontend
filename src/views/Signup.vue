@@ -6,6 +6,11 @@
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
             <form v-on:submit.prevent="submit()">
               <h2>Signup</h2>
+              <h5>
+                Or
+                <a href="/login">Login</a>
+                If Already Registered!
+              </h5>
               <br />
               <ul>
                 <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
@@ -14,6 +19,7 @@
               <div>
                 <input class="solid-input form artist-input" type="text" v-model="newUserParams.name" />
               </div>
+              <small>{{ 50 - newUserParams.name.length }} characters remaining</small>
               <h1>Email:</h1>
               <div>
                 <input class="solid-input form artist-input" type="email" v-model="newUserParams.email" />
@@ -26,6 +32,12 @@
               <div>
                 <input class="solid-input form artist-input" type="password" v-model="newUserParams.password" />
               </div>
+              <small v-if="newUserParams.password.length > 0 && newUserParams.password.length < 6" class="text-danger">
+                Password must be 6 characters
+              </small>
+              <small v-if="newUserParams.password.length > 20" class="text-danger">
+                Password cannot exceed 20 characters
+              </small>
               <h1>Password confirmation:</h1>
               <div>
                 <input
@@ -34,6 +46,10 @@
                   v-model="newUserParams.password_confirmation"
                 />
               </div>
+              <small v-if="newUserParams.password_confirmation !== newUserParams.password" class="text-danger">
+                Must match Password!
+                <br />
+              </small>
               <br />
               <input class="btn btn-primary ripple" type="submit" value="Submit" />
             </form>
@@ -50,7 +66,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newUserParams: {},
+      newUserParams: { name: "", password: "", password_confirmation: "" },
       errors: [],
     };
   },
