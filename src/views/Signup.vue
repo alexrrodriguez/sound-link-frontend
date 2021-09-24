@@ -66,7 +66,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newUserParams: { name: "", password: "", password_confirmation: "" },
+      newUserParams: {},
       errors: [],
     };
   },
