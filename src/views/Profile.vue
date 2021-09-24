@@ -154,13 +154,13 @@ export default {
   },
   methods: {
     indexUser: function () {
-      axios.get("http://localhost:3000/users").then((response) => {
+      axios.get("/users").then((response) => {
         console.log("user index", response);
         this.user = response.data;
       });
     },
     indexUserConcerts: function () {
-      axios.get("http://localhost:3000/user_concerts").then((response) => {
+      axios.get("/user_concerts").then((response) => {
         console.log("user concerts index", response);
         this.concerts = response.data;
       });
@@ -171,7 +171,7 @@ export default {
       document.querySelector("#ticket-details").showModal();
     },
     destroyUserConcert: function (currentTicket) {
-      axios.delete("http://localhost:3000/user_concerts/" + currentTicket.id).then((response) => {
+      axios.delete("/user_concerts/" + currentTicket.id).then((response) => {
         console.log("user concert destroy", response);
         window.location.reload();
       });
