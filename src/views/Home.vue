@@ -333,7 +333,7 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           console.log("events index", data);
-          this.events = data.data._embedded.events;
+          this.events = data._embedded.events;
         })
         .catch((error) => {
           this.events = [];
@@ -351,7 +351,7 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           console.log("random events index", data);
-          this.randomTickets = data.data._embedded.events;
+          this.randomTickets = data._embedded.events;
           console.log(this.randomTickets);
         })
         .catch((error) => {
