@@ -314,8 +314,15 @@ export default {
   },
   created: function () {
     this.randomTicket();
+    this.logoutAuthorization();
   },
   methods: {
+    logoutAuthorization: function () {
+      let accessToken = localStorage.getItem("jwt-token");
+      if (accessToken == "") {
+        this.$router.push("/logout");
+      }
+    },
     indexEvents: function () {
       this.errors = [];
       let apiKey = process.env.VUE_APP_TICKETMASTER_TOKEN;

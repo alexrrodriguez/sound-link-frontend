@@ -15,7 +15,7 @@
               <ul>
                 <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
               </ul>
-              <h1>Name:</h1>
+              <h1>Username:</h1>
               <div>
                 <input class="solid-input form artist-input" type="text" v-model="newUserParams.name" />
               </div>
