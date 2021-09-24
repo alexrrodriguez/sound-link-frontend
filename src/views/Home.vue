@@ -364,9 +364,10 @@ export default {
       fetch(
         `https://app.ticketmaster.com/discovery/v2/events.json?size=100&sort=random&countryCode=US&classificationName=Music&apikey=${apiKey}`
       )
-        .then((response) => {
-          console.log("random events all index", response);
-          this.randomTickets = response.data._embedded.events;
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("random events all index", data);
+          this.randomTickets = data._embedded.events;
           console.log(this.randomTickets);
         })
         .catch((error) => {
@@ -415,7 +416,7 @@ export default {
       console.log(this.newUserConcert.time);
       console.log(this.newUserConcert.tickets);
       axios
-        .post("http://localhost:3000/user_concerts", this.newUserConcert)
+        .post("/user_concerts", this.newUserConcert)
         .then((response) => {
           console.log("user concert created", response);
           this.$router.push("/profile");
