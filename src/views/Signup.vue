@@ -76,7 +76,7 @@ export default {
         .post("http://localhost:3000/users", this.newUserParams)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/profile");
+          this.$router.push("/login");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
