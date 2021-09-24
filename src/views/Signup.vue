@@ -73,7 +73,7 @@ export default {
   methods: {
     submit: function () {
       axios
-        .post("/users", this.newUserParams)
+        .post("http://localhost:3000/users", this.newUserParams)
         .then((response) => {
           console.log(response.data);
           this.$router.push("/login");
