@@ -66,12 +66,13 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newUserParams: {},
+      newUserParams: { name: "", password: "", password_confirmation: "" },
       errors: [],
     };
   },
   methods: {
     submit: function () {
+      console.log(this.newUserParams);
       axios
         .post("http://localhost:3000/users", this.newUserParams)
         .then((response) => {
