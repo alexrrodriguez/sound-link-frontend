@@ -330,9 +330,10 @@ export default {
       fetch(
         `https://app.ticketmaster.com/discovery/v2/events.json?size=48&city=${this.citySearch}&genreId=${this.genreSearch}&classificationId=KZFzniwnSyZfZ7v7nJ&apikey=${apiKey}`
       )
-        .then((response) => {
-          console.log("events index", response);
-          this.events = response.data._embedded.events;
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("events index", data);
+          this.events = data.data._embedded.events;
         })
         .catch((error) => {
           this.events = [];
@@ -347,9 +348,10 @@ export default {
       fetch(
         `https://app.ticketmaster.com/discovery/v2/events.json?size=12&sort=random&countryCode=US&classificationName=Music&apikey=${apiKey}`
       )
-        .then((response) => {
-          console.log("random events index", response);
-          this.randomTickets = response.data._embedded.events;
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("random events index", data);
+          this.randomTickets = data.data._embedded.events;
           console.log(this.randomTickets);
         })
         .catch((error) => {
