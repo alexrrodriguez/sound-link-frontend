@@ -5,24 +5,36 @@
         <div class="row home-search-header">
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
             <h2 class="chart-title-header">{{ message }}</h2>
+            <br />
+            <div>
+              <h1 for="artist">Top 50 Artists Chart</h1>
+              <br />
+              <input @click="artistChart()" type="radio" id="artist" name="drone" />
+            </div>
+            <br />
+            <div>
+              <h1 for="tracks">Top 50 Tracks Chart</h1>
+              <br />
+              <input @click="tracksChart()" type="radio" id="tracks" name="drone" />
+            </div>
           </div>
         </div>
       </div>
     </section>
     <div class="chart-wrapper">
-      <div class="artist-chart">
+      <div v-if="artists.length != 0" class="artist-chart">
         <section class="section-bg filter-section events">
           <div class="container">
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
-                <h2 class="chart-title">Top 50 Artist Chart</h2>
+                <h2 class="chart-title">Top 50 Artists Chart</h2>
                 <hr />
                 <div class="row justify-content-center no-gutters match-height chart-list-container">
                   <div class="col-12 col-sm-12 col-md-12 col-lg-8 event-rap event-anniversary event-romance">
                     <div class="chart-list-container">
                       <ol class="chart-list">
                         <li v-for="artist in artists" :key="artist.id">
-                          <div>
+                          <div class="chart-div">
                             <h2 class="chart-name">{{ artist.name }}</h2>
 
                             <h5>Playcount:</h5>
@@ -43,7 +55,7 @@
           </div>
         </section>
       </div>
-      <div class="track-chart">
+      <div v-if="tracks.length != 0" class="track-chart">
         <section class="section-bg filter-section events">
           <div class="container">
             <div class="row">
@@ -55,16 +67,17 @@
                     <div class="chart-list-container">
                       <ol class="chart-list">
                         <li v-for="track in tracks" :key="track.id">
-                          <h2 class="chart-name">{{ track.name }}</h2>
-                          <h1>By</h1>
-                          <h4 class="artist-name-track">{{ track.artist.name }}</h4>
-                          <br />
-                          <h5>Playcount:</h5>
-                          <p>{{ track.playcount }}</p>
-                          <h5>Listeners:</h5>
-                          <p>{{ track.listeners }}</p>
-                          <button class="btn btn-primary ripple"><a :href="track.url">More Info</a></button>
-
+                          <div class="chart-div">
+                            <h2 class="chart-name">{{ track.name }}</h2>
+                            <h1>By</h1>
+                            <h4 class="artist-name-track">{{ track.artist.name }}</h4>
+                            <br />
+                            <h5>Playcount:</h5>
+                            <p>{{ track.playcount }}</p>
+                            <h5>Listeners:</h5>
+                            <p>{{ track.listeners }}</p>
+                            <button class="btn btn-primary ripple"><a :href="track.url">More Info</a></button>
+                          </div>
                           <hr />
                         </li>
                       </ol>
@@ -81,6 +94,9 @@
 </template>
 
 <style>
+.chart-div:hover {
+  background: lightblue;
+}
 .chart-name {
   font-size: 3rem !important;
 }
@@ -102,16 +118,16 @@
   position: relative;
 }
 .artist-chart {
-  margin: 1%;
+  margin: 4%;
   text-align: center;
-  display: inline-block;
-  width: 48%;
+  /* display: inline-block;
+  width: 48%; */
 }
 .track-chart {
-  margin: 1%;
+  margin: 4%;
   text-align: center;
-  display: inline-block;
-  width: 48%;
+  /* display: inline-block;
+  width: 48%; */
 }
 .more-info-artist {
   color: blue;
@@ -130,11 +146,12 @@ export default {
     };
   },
   created: function () {
-    this.artistChart();
-    this.tracksChart();
+    // this.artistChart();
+    // this.tracksChart();
   },
   methods: {
     artistChart: function () {
+      this.tracks = [];
       let apiKey = process.env.VUE_APP_LASTFM_TOKEN;
       axios
         .get(`https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=${apiKey}&format=json`)
@@ -145,6 +162,7 @@ export default {
         });
     },
     tracksChart: function () {
+      this.artists = [];
       let apiKey = process.env.VUE_APP_LASTFM_TOKEN;
       axios
         .get(`https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=${apiKey}&format=json`)
