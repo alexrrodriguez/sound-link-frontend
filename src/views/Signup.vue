@@ -4,17 +4,17 @@
       <div class="container">
         <div class="row home-search-header">
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
+            <h2>Signup</h2>
+            <h5>
+              Or
+              <a href="/login">Login</a>
+              If Already Registered!
+            </h5>
+            <br />
+            <ul>
+              <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+            </ul>
             <form v-on:submit.prevent="submit()">
-              <h2>Signup</h2>
-              <h5>
-                Or
-                <a href="/login">Login</a>
-                If Already Registered!
-              </h5>
-              <br />
-              <ul>
-                <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-              </ul>
               <h1>Username:</h1>
               <div>
                 <input class="solid-input form artist-input" type="text" v-model="newUserParams.name" />
