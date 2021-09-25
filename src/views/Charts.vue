@@ -94,6 +94,9 @@
 </template>
 
 <style>
+input[type="radio"] {
+  transform: scale(2);
+}
 .chart-div:hover {
   background: lightblue;
 }
