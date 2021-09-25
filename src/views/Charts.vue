@@ -7,13 +7,13 @@
             <h2 class="chart-title-header">{{ message }}</h2>
             <br />
             <div>
-              <h1 for="artist">Top 50 Artists Chart</h1>
+              <h1 class="chart-title-header" for="artist">Top 50 Artists Chart</h1>
               <br />
               <input @click="artistChart()" type="radio" id="artist" name="drone" />
             </div>
             <br />
             <div>
-              <h1 for="tracks">Top 50 Tracks Chart</h1>
+              <h1 class="chart-title-header" for="tracks">Top 50 Tracks Chart</h1>
               <br />
               <input @click="tracksChart()" type="radio" id="tracks" name="drone" />
             </div>
