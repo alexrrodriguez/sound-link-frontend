@@ -27,7 +27,7 @@
         <br />
         <div class="row home-search-header">
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
-            <h2>Search For Events</h2>
+            <h2>Search For Music Events</h2>
           </div>
           <div class="col-lg-12 col-md-12">
             <br />
@@ -115,7 +115,6 @@
                   </ul>
                 </div>
                 <h1 class="event-info-text">Click for Event / Ticket Info</h1>
-                <!-- <button v-on:click="showTicket(event)">Event / Ticket Info</button> -->
                 <br />
                 <br />
               </div>
@@ -183,7 +182,7 @@
         </dialog>
         <div class="row home-search-header">
           <div class="col-md-12 col-sm-12 col-xs-12 section-main-title">
-            <h2>Upcoming Events</h2>
+            <h2>Browse Upcoming Events</h2>
           </div>
         </div>
         <!-- No Content available -->
