@@ -63,7 +63,7 @@
               <div>
                 <h1 class="chart-title-header" for="artist">Top 50 Artists Chart</h1>
                 <br />
-                <input @click="artistChart()" type="radio" id="artist" name="drone" />
+                <input @click="artistChart()" type="radio" id="artist" name="drone" checked />
               </div>
               <br />
               <div>
@@ -206,7 +206,7 @@ export default {
     };
   },
   created: function () {
-    // this.artistChart();
+    this.artistChart();
     // this.tracksChart();
   },
   methods: {
